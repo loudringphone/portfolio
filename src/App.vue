@@ -37,8 +37,8 @@ export default {
   },
   mounted () {
     window.addEventListener('scroll', function() {
-       const navbar = this.document.querySelector('.navbar')
-       navbar.style.opacity = 0.35;
+       const nav = this.document.querySelector('.navbar')
+       nav.style.opacity = 0.35;
         
         if (gettingOpaque) {
     clearTimeout(gettingOpaque);
