@@ -22,7 +22,7 @@ import BackToTop from '@/components/BackToTop.vue'
 
 
 
-
+let gettingOpaque
 
 export default {
   name: 'HomeView',
@@ -34,7 +34,21 @@ export default {
     Threelancers,
     Tutonet,
     BackToTop
+  },
+  mounted () {
+    window.addEventListener('scroll', function() {
+       const navbar = this.document.querySelector('.navbar')
+       navbar.style.opacity = 0.35;
+        
+        if (gettingOpaque) {
+    clearTimeout(gettingOpaque);
   }
+
+  gettingOpaque = setTimeout(function() {
+    nav.style.opacity = 1;
+  }, 1500);
+    });
+  },
 }
 </script>
 

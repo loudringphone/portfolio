@@ -1,6 +1,6 @@
 <template>
 
-  <nav id="navbar" class="navbar navbar-expand-lg navbar-light bg-light">
+  <nav id="navbar" class="navbar navbar-expand-lg navbar-light bg-light" @mouseover="gettingOpaque($event)">
     <i class="bi bi-list" @click="toggleNavbar($event)"></i>
     <button class="btn btn-block btn-lg glow-button btn-warning"><a class="selected" href="about" @click="scrollTo($event)">About Winston</a></button>
     <button v-for="(nav, i) in navs" :key="i">
@@ -24,6 +24,10 @@ export default {
             };
         },
   methods: {
+    gettingOpaque(event){
+      const nav = event.target;
+      nav.style.opacity = 1;
+    },
     toggleNavbar(event){
       const hamburger = event.target
       const nav = hamburger.parentElement
