@@ -27,6 +27,7 @@ export default {
     gettingOpaque(event){
       const nav = event.target;
       nav.style.opacity = 1;
+      nav.style.borderBottom = 'groove'
     },
     toggleNavbar(event){
       const hamburger = event.target
