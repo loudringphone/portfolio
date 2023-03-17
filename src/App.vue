@@ -181,7 +181,6 @@ ul {
         width: 65px !important;
         padding-right: 1vw !important;
         padding-left: 1vw !important;
-        padding-bottom: 20px;
         height: auto !important;
         border-style: groove;
         border-bottom-right-radius: 10px;
