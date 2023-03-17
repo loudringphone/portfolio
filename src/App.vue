@@ -59,6 +59,9 @@ export default {
     text-align: center;
     font-family: Arial, Helvetica, sans-serif;
 }
+.navbar {
+    border-bottom: groove;
+}
 h2 {
     text-align: center;
     padding-top: 20px;
