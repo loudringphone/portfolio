@@ -65,7 +65,9 @@ export default {
       }
     },
     mailTo() {
-      window.location.href = "mailto:wingfunglau@gmail.com";
+      if (this.isRedirecting === false) {
+        window.location.href = "mailto:wingfunglau@gmail.com";
+      }
     },
     redirect(event) {
       if (this.isRedirecting === false) {
@@ -74,6 +76,16 @@ export default {
         let button = event.target;
         if (button.children.length === 0) {
           button = button.parentElement;
+        }
+        const about = document.querySelector('#about');
+        const buttons = about.querySelectorAll('button')
+        for (let b of buttons) {
+          if (b != button) {
+          b.style.pointerEvents = 'none';
+          b.style.backgroundColor = 'lightgrey';
+          b.style.color = 'grey';
+          b.style.borderColor = 'grey';
+          }
         }
         const notification = document.querySelector('#notification');
         const a = notification.querySelector('a');
@@ -113,12 +125,24 @@ export default {
           else if (span.textContent === '0 seconds') {
             clearInterval(countdown);
             this.isRedirecting = false;
+            for (let button of buttons) {
+              button.style.pointerEvents = 'auto'
+              button.style.backgroundColor = 'lightyellow';
+              button.style.color = 'salmon';
+              button.style.borderColor = 'salmon';
+            }
             window.location.assign(button.title);
           }
         }, 1000);
         notification.addEventListener('click', () => {
           this.isRedirecting = false;
           clearInterval(countdown);
+          for (let button of buttons) {
+            button.style.pointerEvents = 'auto'
+            button.style.backgroundColor = 'lightyellow';
+            button.style.color = 'salmon';
+            button.style.borderColor = 'salmon';
+          }
           opacity = 1
           let gettingTransparent = setInterval(() => {
           opacity -= 0.1;
@@ -133,6 +157,7 @@ export default {
     },
     copyMobile() {
       if (this.isRedirecting === false) {
+        this.$toast.clear();
         const number = '0422882062';
 
         const tempInput = document.createElement('input');
