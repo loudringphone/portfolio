@@ -25,9 +25,9 @@ export default {
       
       let target
       if (window.innerWidth <= 1000) {
-        target = document.querySelector(".para1")
+        target = document.querySelector("#winston")
       } else {
-        target = document.querySelector("#aboutwinston")
+        target = document.querySelector("#about")
       }
       target.scrollIntoView({ behavior: 'smooth', block: 'start' });
       document.body.style.pointerEvents = "none";

@@ -70,9 +70,8 @@ export default {
             html.style.overflow="overlay";
             html.style.pointerEvents = "auto";
           }, 150);
-
-          const btnClose = sancbookDiv.querySelector('.close-btn')
-          btnClose.style.display = 'block'
+          const btnClose = sancbookDiv.querySelector('.close-btn');
+          btnClose.style.display = 'block';
           let phExisted = false;
           for (let sancbook of sancbooks) {
             if (sancbook.classList.contains('placeholder')) {

@@ -1,6 +1,6 @@
 <template>
 
-  <div id="aboutwinston" @mouseover="mouseOver()">
+  <div id="about" @mouseover="mouseOver()">
     <h2>{{ title }}</h2>
     <br>
     <h3>Hello! I'm a web developer based in Sydney!</h3>
@@ -22,11 +22,16 @@
 
   <b-button variant="outline-primary" title="mailto:wingfunglau@gmail.com" @click="mailTo()"><i class="bi bi-envelope"></i></b-button>
   <b-button variant="outline-primary" 
-  title="https://www.linkedin.com/in/winston-lau/" @click="openLinkedin()"><i class="bi bi-linkedin"></i></b-button>
-  <b-button variant="outline-primary" title="https://github.com/loudringphone/" @click="openGithub()"><i class="bi bi-github"></i></b-button>
+  title="https://www.linkedin.com/in/winston-lau/" @click="redirect($event)"><i class="bi bi-linkedin"></i></b-button>
+  <b-button variant="outline-primary" title="https://github.com/loudringphone/" @click="redirect($event)"><i class="bi bi-github"></i></b-button>
   <b-button variant="outline-primary" title="copy to clipboard:0422882062" @click="copyMobile()"><i class="bi bi-phone"></i></b-button>
   <toast ref="toast" />
 
+  <div class='footnote'>
+    <p>Oh by the way, if you are browsing my portfolio in desktop mode, you can enlarge the gifs by clicking on them!</p>
+  </div>
+
+  <div id="notification">Redirect to <a href="https://www.linkedin.com/in/winston-lau/" target="_blank">https://www.linkedin.com/in/winston-lau/</a> in <span>5 seconds</span>. <br> Click the notification bar to abort the redirection.</div>
   </div>
 
 </template>
@@ -42,7 +47,8 @@ export default {
             return {
                 title: 'About Winston',
                 features: [
-                  {image:require('@/assets/about/graduation.jpeg'), alt:"This is me at the graduation ceremony for my accounting degree. I didn't know I would create a portfolio as a web developer one day!"}]
+                  {image:require('@/assets/about/graduation.jpeg'), alt:"This is me at the graduation ceremony for my accounting degree. I didn't know I would create a portfolio as a web developer one day!"}],
+                isRedirecting: false
             };
         },
   methods: {
@@ -61,38 +67,98 @@ export default {
     mailTo() {
       window.location.href = "mailto:wingfunglau@gmail.com";
     },
-    openLinkedin() {
-      window.open("https://www.linkedin.com/in/winston-lau/", "_blank");
-    },
-    openGithub() {
-      window.open("https://github.com/loudringphone/", "_blank");
+    redirect(event) {
+      if (this.isRedirecting === false) {
+        this.$toast.clear();
+        this.isRedirecting = true;
+        let button = event.target;
+        if (button.children.length === 0) {
+          button = button.parentElement;
+        }
+        const notification = document.querySelector('#notification');
+        const a = notification.querySelector('a');
+        a.href = button.title;
+        a.textContent = button.title;
+        const span = notification.querySelector('span');
+        span.textContent = '5 seconds'
+        notification.style.display = 'block';
+        notification.style.opacity = 0;
+        let opacity = 0;
+        let gettingOpaque = setInterval(() => {
+          opacity += 0.1;
+          notification.style.opacity = opacity;
+          if (opacity >= 1) {
+            clearInterval(gettingOpaque);
+          }
+        }, 50);
+        
+        
+
+        let countdown = setInterval(() => {
+          if (span.textContent === '5 seconds') {
+            span.textContent = '4 seconds';
+          }
+          else if (span.textContent === '4 seconds') {
+            span.textContent = '3 seconds';
+          }
+          else if (span.textContent === '3 seconds') {
+            span.textContent = '2 seconds';
+          }
+          else if (span.textContent === '2 seconds') {
+            span.textContent = '1 second';
+          }
+          else if (span.textContent === '1 second') {
+            span.textContent = '0 seconds';
+          }
+          else if (span.textContent === '0 seconds') {
+            clearInterval(countdown);
+            this.isRedirecting = false;
+            window.location.assign(button.title);
+          }
+        }, 1000);
+        notification.addEventListener('click', () => {
+          this.isRedirecting = false;
+          clearInterval(countdown);
+          opacity = 1
+          let gettingTransparent = setInterval(() => {
+          opacity -= 0.1;
+          notification.style.opacity = opacity;
+          if (opacity <= 0) {
+            clearInterval(gettingTransparent);
+            notification.style.display = 'none'
+          }
+        }, 50);
+        })
+      }
     },
     copyMobile() {
-      const number = '0422882062';
+      if (this.isRedirecting === false) {
+        const number = '0422882062';
 
-      const tempInput = document.createElement('input');
-      tempInput.value = number;
-      document.body.appendChild(tempInput);
+        const tempInput = document.createElement('input');
+        tempInput.value = number;
+        document.body.appendChild(tempInput);
 
-      tempInput.select();
-      document.execCommand('copy');
+        tempInput.select();
+        document.execCommand('copy');
 
-      document.body.removeChild(tempInput);
+        document.body.removeChild(tempInput);
 
-      this.$toast.info(`${number} has been copied to the clipboard!`, {
-        position: "bottom-center",
-        timeout: 3000,
-        closeOnClick: true,
-        pauseOnFocusLoss: true,
-        pauseOnHover: true,
-        draggable: true,
-        draggablePercent: 0.6,
-        showCloseButtonOnHover: false,
-        hideProgressBar: true,
-        closeButton: "",
-        icon: true,
-        rtl: false
-      });
+        this.$toast.info(`${number} has been copied to the clipboard!`, {
+          position: "bottom-center",
+          timeout: 3000,
+          closeOnClick: true,
+          pauseOnFocusLoss: true,
+          pauseOnHover: true,
+          draggable: true,
+          draggablePercent: 0.6,
+          showCloseButtonOnHover: false,
+          hideProgressBar: true,
+          closeButton: "",
+          icon: true,
+          rtl: false
+        });
+      }
     }
     
   }
@@ -113,6 +179,15 @@ export default {
     grid-template-columns: repeat(2, 380px);
     grid-template-rows: repeat(2, auto);
     gap: 35px
+  }
+  .footnote {
+    justify-content: center;
+    display: flex;
+    width: 80%;
+    margin-top: 50px;
+  }
+  .footnote > p {
+    text-align: left;
   }
 
   p.para1 {
@@ -175,7 +250,23 @@ export default {
     font-size: xxx-large;
   }
 
- 
+  #notification {
+    position: fixed;
+    bottom: 0px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 100;
+    background-color: orange;
+    color: aliceblue;
+    padding: 12px;
+    border-radius: 10px;
+    cursor: pointer;
+    line-height: 200%;
+    display: none;
+    opacity: 0;
+  }
+  
+
   @media (max-width: 1000px) {
     h3 {
       width: 90%;
@@ -186,6 +277,10 @@ export default {
       text-align: -webkit-center;
       margin-bottom: 50px;
       width: 85%
+    }
+    .footnote {
+    margin-top: 50px;
+    width: 85%;
     }
    
     figure {
@@ -199,6 +294,12 @@ export default {
 
     ::before {
     font-size: xx-large;
+    }
+
+    #notification {
+    line-height: 150%;
+    width: 100%;
+    border-radius: 0px;
   }
   }
 </style>

@@ -48,7 +48,7 @@ export default {
   gettingOpaque = setTimeout(function() {
     nav.style.opacity = 1;
     nav.style.borderBottom = 'groove'
-  }, 1500);
+  }, 5000);
     });
   },
 }
@@ -56,6 +56,7 @@ export default {
 
 <style>
 * {
+    position: relative;
     overflow: overlay;
     margin: auto;
     text-align: center;
@@ -123,7 +124,7 @@ p.esc {
 .tutonet.enlarged {
     height: 485px;
 }
-#aboutwinston {
+#about {
     background-color: lightcyan;
     min-height: 100vh;
     padding: 50px 0 50px 0;
