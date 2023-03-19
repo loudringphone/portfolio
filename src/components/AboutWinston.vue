@@ -20,10 +20,11 @@
     </div>
     
 
+  <b-button variant="outline-primary" title="Winston's Resume" @click="redirect($event)"><i class="bi bi-file-person"></i></b-button>
   <b-button variant="outline-primary" title="mailto:wingfunglau@gmail.com" @click="mailTo()"><i class="bi bi-envelope"></i></b-button>
   <b-button variant="outline-primary" 
-  title="https://www.linkedin.com/in/winston-lau/" @click="redirect($event)"><i class="bi bi-linkedin"></i></b-button>
-  <b-button variant="outline-primary" title="https://github.com/loudringphone/" @click="redirect($event)"><i class="bi bi-github"></i></b-button>
+  title="Winston's Linkedin" @click="redirect($event)"><i class="bi bi-linkedin"></i></b-button>
+  <b-button variant="outline-primary" title="Winston's Github" @click="redirect($event)"><i class="bi bi-github"></i></b-button>
   <b-button variant="outline-primary" title="copy to clipboard:0422882062" @click="copyMobile()"><i class="bi bi-phone"></i></b-button>
   <toast ref="toast" />
 
@@ -31,7 +32,7 @@
     <p>Oh by the way, if you are browsing my portfolio in desktop mode, you can enlarge the gifs by clicking on them!</p>
   </div>
 
-  <div id="notification">Redirect to <a href="https://www.linkedin.com/in/winston-lau/" target="_blank">https://www.linkedin.com/in/winston-lau/</a> in <span>5 seconds</span>. <br> Click the notification bar to abort the redirection.</div>
+  <div id="notification">Redirect to <a href="https://www.linkedin.com/in/winston-lau/" target="_blank">Winston's Linkedin</a> in <span>5 seconds</span>. <br> Click this notification bar to abort the redirection.</div>
   </div>
 
 </template>
@@ -89,8 +90,19 @@ export default {
         }
         const notification = document.querySelector('#notification');
         const a = notification.querySelector('a');
-        a.href = button.title;
         a.textContent = button.title;
+
+        switch (button.title) {
+          case "Winston's Resume":
+            a.href = "https://www.canva.com/design/DAFbiIUVqv4/mdC-d-UCB2GMwpETVNAwSg/view?utm_content=DAFbiIUVqv4&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton";
+            break;
+          case "Winston's Linkedin":
+            a.href = "https://www.linkedin.com/in/winston-lau/";
+            break;
+          case "Winston's Github":
+            a.href = "https://github.com/loudringphone/";
+            break;
+        }
         const span = notification.querySelector('span');
         span.textContent = '5 seconds'
         notification.style.display = 'block';
@@ -131,7 +143,7 @@ export default {
               button.style.color = 'salmon';
               button.style.borderColor = 'salmon';
             }
-            window.location.assign(button.title);
+            window.location.assign(a.href);
           }
         }, 1000);
         notification.addEventListener('click', () => {
@@ -320,6 +332,10 @@ export default {
     ::before {
     font-size: xx-large;
     }
+
+    button.btn.btn-outline-primary {
+    margin: 0 5px 10px 5px;
+  }
 
     #notification {
     line-height: 150%;
