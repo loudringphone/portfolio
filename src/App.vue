@@ -48,7 +48,7 @@ export default {
   gettingOpaque = setTimeout(function() {
     nav.style.opacity = 1;
     nav.style.borderBottom = 'groove'
-  }, 5000);
+  }, 3500);
     });
   },
 }

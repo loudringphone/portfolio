@@ -7,7 +7,7 @@
     <br><br>
     <div class='profile'>
       <p class='para1'>
-        I recently graduated from General Assembly where I learned about both front and back end development. I was an accountant previously and I have want to change my career for a long time. Finally I have committed myself in a 12 week intensive course at GA and it is the second best decision I have made in my life. (The best one is of course coming to Australia! )
+        I have recently graduated from General Assembly where I learned about both front and back end development. I was an accountant previously and I have want to change my career for a long time. Finally I have committed myself in a 12 week intensive course at GA and it is the second best decision I have made in my life. (The best one is of course coming to Australia! )
       </p>
 
       <figure id='winston'>
