@@ -154,6 +154,21 @@ export default {
             button.style.backgroundColor = 'lightyellow';
             button.style.color = 'salmon';
             button.style.borderColor = 'salmon';
+
+
+            button.addEventListener('mouseover', () => {
+              button.style.backgroundColor = 'lightskyblue';
+              button.style.color = 'white';
+              button.style.borderColor = 'navy';
+            });
+  
+  
+
+            button.addEventListener('mouseout', () => {
+              button.style.backgroundColor = 'lightyellow';
+              button.style.color = 'salmon';
+              button.style.borderColor = 'salmon';
+            });
           }
           opacity = 1
           let gettingTransparent = setInterval(() => {
