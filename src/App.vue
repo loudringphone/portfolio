@@ -39,7 +39,10 @@ export default {
     window.addEventListener('scroll', function() {
        const nav = this.document.querySelector('.navbar')
        nav.style.opacity = 0.35;
-       nav.style.borderBottom = 'none'
+       if (window.innerWidth > 1000) {
+        nav.style.border = 'none'
+      }
+       
         
         if (gettingOpaque) {
     clearTimeout(gettingOpaque);
@@ -47,7 +50,9 @@ export default {
 
   gettingOpaque = setTimeout(function() {
     nav.style.opacity = 1;
-    nav.style.borderBottom = 'groove'
+    if (window.innerWidth > 1000) {
+        nav.style.borderBottom = 'groove'
+    }
   }, 3500);
     });
   },

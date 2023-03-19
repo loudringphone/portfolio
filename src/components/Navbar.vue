@@ -29,6 +29,9 @@ export default {
       nav.style.opacity = 1;
       const navbar = document.querySelector('#navbar')
       navbar.style.borderBottom = 'groove'
+      if (window.innerWidth <= 1000) {
+        navbar.style.borderRight = 'groove'
+      }
     },
     toggleNavbar(event){
       const hamburger = event.target
