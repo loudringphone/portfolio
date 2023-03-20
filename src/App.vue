@@ -37,13 +37,9 @@ export default {
   },
   mounted () {
     window.addEventListener('touchend', function() {
-        const h2s = document.querySelectorAll('h2');
-        let selected;
-        let bottom = Infinity;
-        if (h2s[h2s.length - 1].getBoundingClientRect().bottom < 0) {
-            return
-        };
         setTimeout(() => {
+            let selected;
+            let bottom = Infinity;
             const about = this.document.querySelector('#about')
             const uttt = this.document.querySelector('#uttt')
             const sancbook = this.document.querySelector('#sancbook')
@@ -79,16 +75,6 @@ export default {
                         bottom = tutonet.getBoundingClientRect().bottom;
                     }
             }
-            // for(let h2 of h2s) {
-            //    alert(`${h2.textContent}: ${h2.getBoundingClientRect().bottom}`)
-            //     if (h2.getBoundingClientRect().bottom >= 0) {
-            //         if (h2.getBoundingClientRect().bottom < bottom) {
-            //             selected = h2.textContent;
-            //             bottom = h2.getBoundingClientRect().bottom;
-            //         }
-            //     }
-                
-            // }
             const nav = this.document.querySelector('.navbar');
             const as = nav.querySelectorAll('a');
             for (let a of as) {
@@ -103,7 +89,7 @@ export default {
                     button.classList.remove("btn", "btn-block", "btn-lg", "glow-button", "btn-warning")
                 }
             }
-        }, 750);
+        }, 1500);
       
     });
 
