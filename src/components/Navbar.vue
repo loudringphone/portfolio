@@ -46,7 +46,7 @@ export default {
       event.preventDefault();
       const a = event.target;
       const nav = a.parentElement.parentElement
-      nav.classList.remove('expanded')
+      // nav.classList.remove('expanded')
       const as = nav.querySelectorAll('a')
       const button = a.parentElement
       const buttons = nav.querySelectorAll('button')
@@ -89,50 +89,56 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-  #navbar {
-      position: fixed;
-      top: 0;
-      width: 100vw;
-      height: 50px;
-      z-index: 99;
-      padding-right: 15vw;
-      padding-left: 15vw;
-      place-content: space-between;
-        }
-  #navbar > button {
-      margin-bottom: 0;
-      height:fit-content;
-      font-size: medium;
-      border: none;
-      background-color: transparent;
-      /* width: 200px; */
-  }
-
-  #navbar > button:hover {
-    border: groove;
-    border-radius: 10px;
-    border-width: medium;
-    border-color: aliceblue;
-  }
-
-   #navbar > button.glow-button:hover {
+#navbar {
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    height: 50px;
+    z-index: 99;
+    padding-right: 15vw;
+    padding-left: 15vw;
+    place-content: space-between;
+      }
+#navbar > button {
+    margin-bottom: 0;
+    height:fit-content;
+    font-size: medium;
     border: none;
-   }
-  .glow-button {
-      box-shadow: 0 0 15px var(--box-shadow-color);
-      --box-shadow-color: #ffc107;
-      background-color: #ffc107 !important;
-      font-size: medium;
-      height: 30px;
-      overflow: hidden;
-      padding: 0 10px 0 10px;
-  }
-  #navbar > button > a {
-      text-decoration: none;
-      color: black;
-  }
-  a.selected {
-    color: white !important;
-  }
+    background-color: transparent;
+    /* width: 200px; */
+}
 
+#navbar > button:hover {
+  border: groove;
+  border-radius: 10px;
+  border-width: medium;
+  border-color: aliceblue;
+}
+
+  #navbar > button.glow-button:hover {
+  border: none;
+  }
+.glow-button {
+    box-shadow: 0 0 15px var(--box-shadow-color);
+    --box-shadow-color: #ffc107;
+    background-color: #ffc107 !important;
+    font-size: medium;
+    height: 30px;
+    overflow: hidden;
+    padding: 0 10px 0 10px;
+}
+#navbar > button > a {
+    text-decoration: none;
+    color: black;
+}
+a.selected {
+  color: white !important;
+}
+
+@media (max-width: 1000px) {
+
+#navbar > button:hover {
+  border: none;
+}
+}
 </style>
