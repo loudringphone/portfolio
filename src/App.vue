@@ -37,68 +37,67 @@ export default {
   },
   mounted () {
     window.addEventListener('touchend', function() {
-        setTimeout(() => {
-            let selected;
-            let bottom = Infinity;
             const about = this.document.querySelector('#about')
-            const uttt = this.document.querySelector('#uttt')
-            const sancbook = this.document.querySelector('#sancbook')
-            const threelancers = this.document.querySelector('#threelancers')
-            const tutonet = this.document.querySelector('#tutonet')
-            if (about.getBoundingClientRect().bottom >= 400) {
-                if (about.getBoundingClientRect().bottom < bottom) {
-                        selected = 'About Winston';
-                        bottom = about.getBoundingClientRect().bottom;
+            let now;
+            let then = Infinity;
+            let scrolling = setInterval(() => {
+                now = about.getBoundingClientRect().bottom
+                if (now === then) {
+                    clearInterval(scrolling);
+                    let selected;
+                    let bottom = Infinity;
+                    const uttt = this.document.querySelector('#uttt')
+                    const sancbook = this.document.querySelector('#sancbook')
+                    const threelancers = this.document.querySelector('#threelancers')
+                    const tutonet = this.document.querySelector('#tutonet')
+                    if (about.getBoundingClientRect().bottom >= 400) {
+                        if (about.getBoundingClientRect().bottom < bottom) {
+                                selected = 'About Winston';
+                                bottom = about.getBoundingClientRect().bottom;
+                            }
                     }
-            }
-            if (uttt.getBoundingClientRect().bottom >= 400) {
-                if (uttt.getBoundingClientRect().bottom < bottom) {
-                        selected = 'Ultimate Tic-tac-toe';
-                        bottom = uttt.getBoundingClientRect().bottom;
+                    if (uttt.getBoundingClientRect().bottom >= 400) {
+                        if (uttt.getBoundingClientRect().bottom < bottom) {
+                                selected = 'Ultimate Tic-tac-toe';
+                                bottom = uttt.getBoundingClientRect().bottom;
+                            }
                     }
-            }
-            if (sancbook.getBoundingClientRect().bottom >= 400) {
-                if (sancbook.getBoundingClientRect().bottom < bottom) {
-                        selected = 'Sancbook';
-                        bottom = sancbook.getBoundingClientRect().bottom;
+                    if (sancbook.getBoundingClientRect().bottom >= 400) {
+                        if (sancbook.getBoundingClientRect().bottom < bottom) {
+                                selected = 'Sancbook';
+                                bottom = sancbook.getBoundingClientRect().bottom;
+                            }
                     }
-            }
-            if (threelancers.getBoundingClientRect().bottom >= 400) {
-                if (threelancers.getBoundingClientRect().bottom < bottom) {
-                        selected = '3Lancers';
-                        bottom = threelancers.getBoundingClientRect().bottom;
+                    if (threelancers.getBoundingClientRect().bottom >= 400) {
+                        if (threelancers.getBoundingClientRect().bottom < bottom) {
+                                selected = '3Lancers';
+                                bottom = threelancers.getBoundingClientRect().bottom;
+                            }
                     }
-            }
-            if (tutonet.getBoundingClientRect().bottom >= 400) {
-                if (tutonet.getBoundingClientRect().bottom < bottom) {
-                        selected = 'Tutonet';
-                        bottom = tutonet.getBoundingClientRect().bottom;
+                    if (tutonet.getBoundingClientRect().bottom >= 400) {
+                        if (tutonet.getBoundingClientRect().bottom < bottom) {
+                                selected = 'Tutonet';
+                                bottom = tutonet.getBoundingClientRect().bottom;
+                            }
                     }
-            }
-            const nav = this.document.querySelector('.navbar');
-            const as = nav.querySelectorAll('a');
-            for (let a of as) {
-                const button = a.parentElement
-                if (a.textContent === selected) {
-                    a.classList.add("selected")
-                    button.classList.add("btn", "btn-block", "btn-lg", "glow-button", "btn-warning")
+                    const nav = this.document.querySelector('.navbar');
+                    const as = nav.querySelectorAll('a');
+                    for (let a of as) {
+                        const button = a.parentElement
+                        if (a.textContent === selected) {
+                            a.classList.add("selected")
+                            button.classList.add("btn", "btn-block", "btn-lg", "glow-button", "btn-warning")
+                        }
+                        else {
+                            a.classList.remove("selected");
+                            a.style.color = 'initial';
+                            button.classList.remove("btn", "btn-block", "btn-lg", "glow-button", "btn-warning")
+                        }
+                    }
                 }
-                else {
-                    a.classList.remove("selected");
-                    a.style.color = 'initial';
-                    button.classList.remove("btn", "btn-block", "btn-lg", "glow-button", "btn-warning")
-                }
-            }
-        }, 1500);
-      
+                then = now
+            }, 100);
     });
-
-
-
-
-
-
-
 
 
 
