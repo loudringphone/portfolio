@@ -22,7 +22,24 @@ export default {
       p.style.color = 'currentcolor'
     },
     backToTop(){
-      
+      const backToTop = document.querySelector('#backToTop')
+      backToTop.firstChild.style.backgroundColor = 'lightskyblue';
+      backToTop.firstChild.style.color = 'white';
+      backToTop.firstChild.style.borderColor = 'navy';
+
+      backToTop.firstChild.addEventListener('mouseover', function(){
+        this.style.backgroundColor = 'lightyellow';
+        this.style.color = 'salmon';
+        this.style.borderColor = 'salmon';
+      })
+      backToTop.firstChild.addEventListener('mouseout', function(){
+        this.style.backgroundColor = 'lightskyblue';
+        this.style.color = 'white';
+        this.style.borderColor = 'navy';
+      })
+
+      const p = backToTop.querySelector('p');
+      p.style.color = 'currentcolor'
       let target
       if (window.innerWidth <= 1000) {
         target = document.querySelector("#winston")
@@ -42,6 +59,26 @@ e.preventDefault();
           window.removeEventListener("wheel", preventDefault, { passive:false });
           document.body.style.pointerEvents = "auto";
           clearInterval(scrolling);
+
+          const nav = document.querySelector('.navbar');
+          const as = nav.querySelectorAll('a');
+          for (let a of as) {
+              const button = a.parentElement
+              if (a.textContent === 'About Winston') {
+                  a.classList.add("selected")
+                  button.classList.add("btn", "btn-block", "btn-lg", "glow-button", "btn-warning")
+              }
+              else {
+                  a.classList.remove("selected");
+                  a.style.color = 'initial';
+                  button.classList.remove("btn", "btn-block", "btn-lg", "glow-button", "btn-warning")
+              }
+          }
+
+
+
+
+
 }
       }, 200);
       setTimeout(() => {

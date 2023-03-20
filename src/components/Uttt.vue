@@ -1,5 +1,5 @@
 <template>
-  <div id="uttt" @mouseover="mouseOver()">
+  <div id="uttt" @mouseover="mouseOver()" @touchstart="touchStart()">
     <button class="close-btn" @click="decreaseImageSize($event)" >&times;</button>
     <h2>{{ title }}</h2>
     <p>{{ category }}</p>
@@ -41,6 +41,21 @@ export default {
         },
   methods: {
     mouseOver() {
+      const utttDiv = document.querySelector('#uttt')
+      
+      const nav = document.querySelector('nav')
+      
+      const buttons = nav.querySelectorAll('button')
+      for (let button of buttons) {
+        button.classList.remove("btn", "btn-block", "btn-lg", "glow-button", "btn-warning")
+        button.firstChild.classList.remove("selected")
+        if (button.firstChild.textContent === 'Ultimate Tic-tac-toe') {
+          button.classList.add("btn", "btn-block", "btn-lg", "glow-button", "btn-warning")
+          button.firstChild.classList.add("selected")
+        }
+      }
+    },
+    touchStart() {
       const utttDiv = document.querySelector('#uttt')
       
       const nav = document.querySelector('nav')

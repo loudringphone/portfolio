@@ -1,5 +1,5 @@
 <template>
-  <div id="threelancers" @mouseover="mouseOver()">
+  <div id="threelancers" @mouseover="mouseOver()" @touchstart="touchStart()">
     <button class="close-btn" @click="decreaseImageSize($event)" >&times;</button>
         <h2>{{ title }}</h2>
         <p>{{ category }}</p>
@@ -40,6 +40,18 @@ export default {
         },
   methods: {
     mouseOver() {
+      const nav = document.querySelector('nav')
+      const buttons = nav.querySelectorAll('button')
+      for (let button of buttons) {
+        button.classList.remove("btn", "btn-block", "btn-lg", "glow-button", "btn-warning")
+        button.firstChild.classList.remove("selected")
+        if (button.firstChild.textContent === '3Lancers') {
+          button.classList.add("btn", "btn-block", "btn-lg", "glow-button", "btn-warning")
+          button.firstChild.classList.add("selected")
+        }
+      }
+    },
+    touchStart() {
       const nav = document.querySelector('nav')
       const buttons = nav.querySelectorAll('button')
       for (let button of buttons) {

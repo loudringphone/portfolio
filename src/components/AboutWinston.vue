@@ -1,6 +1,6 @@
 <template>
 
-  <div id="about" @mouseover="mouseOver()">
+  <div id="about" @mouseover="mouseOver()" @touchstart="touchStart()">
     <h2>{{ title }}</h2>
     <br>
     <h3>Hello! I'm a web developer based in Sydney!</h3>
@@ -54,6 +54,18 @@ export default {
         },
   methods: {
     mouseOver() {
+      const nav = document.querySelector('nav')
+      const buttons = nav.querySelectorAll('button')
+      for (let button of buttons) {
+        button.classList.remove("btn", "btn-block", "btn-lg", "glow-button", "btn-warning")
+        button.firstChild.classList.remove("selected")
+        if (button.firstChild.textContent === 'About Winston') {
+          button.classList.add("btn", "btn-block", "btn-lg", "glow-button", "btn-warning")
+          button.firstChild.classList.add("selected")
+        }
+      }
+    },
+    touchStart() {
       const nav = document.querySelector('nav')
       const buttons = nav.querySelectorAll('button')
       for (let button of buttons) {
