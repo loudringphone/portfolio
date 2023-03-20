@@ -145,6 +145,7 @@ export default {
           }
           else if (span.textContent === '1 second') {
             span.textContent = '0 seconds';
+            window.location.assign(a.href);
           }
           else if (span.textContent === '0 seconds') {
             clearInterval(countdown);
@@ -155,7 +156,7 @@ export default {
               button.style.color = 'salmon';
               button.style.borderColor = 'salmon';
             }
-            window.location.assign(a.href);
+            // window.location.assign(a.href);
           }
         }, 1000);
         notification.addEventListener('click', () => {
