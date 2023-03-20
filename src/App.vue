@@ -42,8 +42,8 @@ export default {
             let then = Infinity;
             let scrolling = setInterval(() => {
                 now = about.getBoundingClientRect().bottom
-                if (now === then) {
-                    clearInterval(scrolling);
+                // if (now === then) {
+                //     clearInterval(scrolling);
                     let selected;
                     let bottom = Infinity;
                     const uttt = this.document.querySelector('#uttt')
@@ -94,6 +94,8 @@ export default {
                             button.classList.remove("btn", "btn-block", "btn-lg", "glow-button", "btn-warning")
                         }
                     }
+                if (now === then) {
+                    clearInterval(scrolling);
                 }
                 then = now
             }, 100);
@@ -103,7 +105,9 @@ export default {
 
     window.addEventListener('scroll', function() {
        const nav = this.document.querySelector('.navbar');
-       nav.style.opacity = 0.35;
+       if (!nav.classList.contains('expanded')) {
+        nav.style.opacity = 0.35;
+       }
        if (window.innerWidth > 1000) {
         nav.style.border = 'none'
       }
