@@ -98,7 +98,7 @@ export default {
                     clearInterval(scrolling);
                 }
                 then = now
-            }, 200);
+            }, 250);
     });
 
 
