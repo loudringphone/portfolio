@@ -3,7 +3,7 @@
   <div id="about" @mouseover="mouseOver()" @touchstart="touchStart()">
     <h2>{{ title }}</h2>
     <br>
-    <h3>Hello! I'm a web developer based in Sydney!</h3>
+    <h3>Hello! I'm a junior software developer based in Sydney!</h3>
     <br><br>
     <div class='profile'>
       <p class='para1'>
@@ -341,7 +341,7 @@ export default {
       max-height:max-content;
       text-align: -webkit-center;
       margin-bottom: 50px;
-      width: 85%
+      width: 90%
     }
     .footnote {
     margin-top: 50px;
@@ -369,6 +369,18 @@ export default {
     line-height: 150%;
     width: 100%;
     border-radius: 0px;
+  }
+
+  @media (max-width: 600px) {
+    #winston {
+      width: 100% !important;
+    }
+    img {
+      width: 100% !important;
+    }
+
+
+
   }
   }
 </style>
