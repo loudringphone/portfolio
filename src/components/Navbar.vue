@@ -57,9 +57,10 @@ export default {
       for (let button of buttons) {
         button.classList.remove("btn", "btn-block", "btn-lg", "glow-button", "btn-warning")
       }
-      button.classList.add("btn", "btn-block", "btn-lg", "glow-button", "btn-warning")
-      a.classList.add("selected")
-      const h2s = document.querySelectorAll('h2');
+
+        
+      
+        const h2s = document.querySelectorAll('h2');
       for (let h2 of h2s) {
         if (h2.textContent === event.target.textContent) {
           
@@ -74,6 +75,8 @@ export default {
             if (Math.floor(h2.parentElement.getBoundingClientRect().top) <= 10 && Math.floor(h2.parentElement.getBoundingClientRect().top) >= -10) {
               window.removeEventListener("wheel", preventDefault, { passive:false });
               document.body.style.pointerEvents = "auto";
+              button.classList.add("btn", "btn-block", "btn-lg", "glow-button", "btn-warning")
+              a.classList.add("selected")
               clearInterval(scrolling);
 }
           }, 200);
