@@ -102,27 +102,45 @@ export default {
     });
 
 
+    let lastScrollTop = 0;
 
     window.addEventListener('scroll', function() {
        const nav = this.document.querySelector('.navbar');
        if (!nav.classList.contains('expanded')) {
-        nav.style.opacity = 0.35;
+        // nav.style.opacity = 0.35;
        }
        if (window.innerWidth > 1000) {
         nav.style.border = 'none'
-      }
-       
-        
-        if (gettingOpaque) {
-    clearTimeout(gettingOpaque);
-  }
+       }
+       if (gettingOpaque) {
+        clearTimeout(gettingOpaque);
+       }
+        gettingOpaque = setTimeout(function() {
+            nav.style.opacity = 1;
+            if (window.innerWidth > 1000) {
+                nav.style.borderBottom = 'groove'
+            }
+        }, 3500);
 
-  gettingOpaque = setTimeout(function() {
-    nav.style.opacity = 1;
-    if (window.innerWidth > 1000) {
-        nav.style.borderBottom = 'groove'
-    }
-  }, 3500);
+        
+        let st = window.pageYOffset || document.documentElement.scrollTop;
+        if (st > lastScrollTop) {
+            if (!nav.classList.contains('expanded')) {
+                nav.style.opacity = 0.35;
+            }
+            // downscroll code
+        } else if (st < lastScrollTop) {
+            nav.style.opacity = 1;
+            if (window.innerWidth > 1000) {
+                nav.style.borderBottom = 'groove'
+            }
+        } // else was horizontal scroll
+        lastScrollTop = st <= 0 ? 0 : st; // For Mobile or negative scrolling
+        
+
+
+
+
     });
   },
 }
