@@ -78,6 +78,13 @@ export default {
               button.classList.add("btn", "btn-block", "btn-lg", "glow-button", "btn-warning")
               a.classList.add("selected")
               clearInterval(scrolling);
+              
+              if (window.innerWidth <= 1000) {
+                setTimeout(() => {
+                  nav.classList.toggle('expanded');
+                  nav.style.opacity = 0.35;
+                }, 500);
+              };
 }
           }, 200);
           

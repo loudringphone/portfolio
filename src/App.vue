@@ -38,14 +38,19 @@ export default {
   mounted () {
     window.addEventListener('touchend', function() {
             const about = this.document.querySelector('#about')
+            const nav = this.document.querySelector('.navbar');
+            const isExpanded = nav.classList.contains('expanded')
             let now;
             let then = Infinity;
+            const thenSelected = this.document.querySelector('.selected').textContent
+            let nowSelected = thenSelected
             let scrolling = setInterval(() => {
                 now = about.getBoundingClientRect().bottom
                 // if (now === then) {
                 //     clearInterval(scrolling);
                     let selected;
                     let bottom = Infinity;
+                    const body = this.document.querySelector('body');
                     const uttt = this.document.querySelector('#uttt')
                     const sancbook = this.document.querySelector('#sancbook')
                     const threelancers = this.document.querySelector('#threelancers')
@@ -80,11 +85,11 @@ export default {
                                 bottom = tutonet.getBoundingClientRect().bottom;
                             }
                     }
-                    const nav = this.document.querySelector('.navbar');
                     const as = nav.querySelectorAll('a');
                     for (let a of as) {
                         const button = a.parentElement
                         if (a.textContent === selected) {
+                            nowSelected = a.textContent
                             a.classList.add("selected")
                             button.classList.add("btn", "btn-block", "btn-lg", "glow-button", "btn-warning")
                         }
@@ -96,6 +101,14 @@ export default {
                     }
                 if (now === then) {
                     clearInterval(scrolling);
+                    setTimeout(() => {
+                        if (thenSelected != nowSelected) {
+                            if (isExpanded) {
+                                nav.classList.remove('expanded');
+                                nav.style.opacity = 0.35;
+                            }
+                        }
+                    }, 200);
                 }
                 then = now
             }, 275);
