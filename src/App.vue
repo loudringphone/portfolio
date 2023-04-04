@@ -42,8 +42,6 @@ export default {
             const isExpanded = nav.classList.contains('expanded')
             let now;
             let then = Infinity;
-            const thenSelected = this.document.querySelector('.selected').textContent
-            let nowSelected = thenSelected
             let scrolling = setInterval(() => {
                 now = about.getBoundingClientRect().bottom
                 // if (now === then) {
@@ -89,7 +87,6 @@ export default {
                     for (let a of as) {
                         const button = a.parentElement
                         if (a.textContent === selected) {
-                            nowSelected = a.textContent
                             a.classList.add("selected")
                             button.classList.add("btn", "btn-block", "btn-lg", "glow-button", "btn-warning")
                         }
@@ -102,13 +99,11 @@ export default {
                 if (now === then) {
                     clearInterval(scrolling);
                     setTimeout(() => {
-                        if (thenSelected != nowSelected) {
                             if (isExpanded) {
                                 nav.classList.remove('expanded');
                                 nav.style.opacity = 0.35;
                             }
-                        }
-                    }, 200);
+                    }, 150);
                 }
                 then = now
             }, 275);

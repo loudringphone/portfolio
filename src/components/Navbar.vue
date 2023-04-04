@@ -81,7 +81,7 @@ export default {
               
               if (window.innerWidth <= 1000) {
                 setTimeout(() => {
-                  nav.classList.toggle('expanded');
+                  nav.classList.remove('expanded');
                   nav.style.opacity = 0.35;
                 }, 500);
               };
