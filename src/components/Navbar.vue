@@ -2,8 +2,8 @@
 
   <nav id="navbar" class="navbar navbar-expand-lg navbar-light bg-light" @mouseover="gettingOpaque($event)">
     <i class="bi bi-list" @click="toggleNavbar($event)"></i>
-    <button class="btn btn-block btn-lg glow-button btn-warning"><a class="selected" href="about" @click="scrollTo($event)">About Winston</a></button>
-    <button v-for="(nav, i) in navs" :key="i">
+    <button @click="scrollTo($event)" class="btn btn-block btn-lg glow-button btn-warning"><a class="selected" href="about" @click="scrollTo($event)">About Winston</a></button>
+    <button @click="scrollTo($event)" v-for="(nav, i) in navs" :key="i">
       <a :href="nav.href" @click="scrollTo($event)">{{nav.text}}</a>
     </button>
 </nav>
@@ -44,11 +44,20 @@ export default {
     },
     scrollTo(event){
       event.preventDefault();
-      const a = event.target;
-      const nav = a.parentElement.parentElement
-      // nav.classList.remove('expanded')
+      let a;
+      let nav;
+      let button;
+      if (event.target.tagName === 'A') {
+        a = event.target;
+        nav = a.parentElement.parentElement;
+        button = a.parentElement;
+      }
+      else if (event.target.tagName === 'BUTTON') {
+        button = event.target;
+        nav = button.parentElement;
+        a = button.querySelector('a')
+      }
       const as = nav.querySelectorAll('a')
-      const button = a.parentElement
       const buttons = nav.querySelectorAll('button')
       for (let a of as) {
         a.classList.remove("selected")
