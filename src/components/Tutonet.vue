@@ -113,6 +113,22 @@ export default {
 
           tutonet.classList.add('enlarged');
           tutonetDiv.style.background = 'black'
+
+          const nav = document.querySelector('nav')
+          const aboutDiv = document.querySelector('#about')
+          const videostoreDiv = document.querySelector('#videostore')
+          const sancbookDiv = document.querySelector('#sancbook')
+          const utttDiv = document.querySelector('#uttt')
+          const threelancersDiv = document.querySelector('#threelancers')
+          const backToTop = document.querySelector('#backToTop')
+          nav.style.pointerEvents = 'none' 
+          aboutDiv.style.display = 'none' 
+          videostoreDiv.style.display = 'none' 
+          sancbookDiv.style.display = 'none' 
+          utttDiv.style.display = 'none' 
+          threelancersDiv.style.display = 'none' 
+          backToTop.style.display = 'none'
+
           const a = tutonetDiv.querySelector('a');
           const ps = tutonetDiv.querySelectorAll('p');
           const ul = tutonetDiv.querySelector('ul');
@@ -159,6 +175,23 @@ export default {
                 tutonet.remove()
               }
             }
+
+            const nav = document.querySelector('nav')
+            const aboutDiv = document.querySelector('#about')
+            const videostoreDiv = document.querySelector('#videostore')
+            const sancbookDiv = document.querySelector('#sancbook')
+            const utttDiv = document.querySelector('#uttt')
+            const threelancersDiv = document.querySelector('#threelancers')
+            const backToTop = document.querySelector('#backToTop')
+            nav.style.pointerEvents = 'auto' 
+            aboutDiv.style.display = 'block' 
+            videostoreDiv.style.display = 'block' 
+            sancbookDiv.style.display = 'block' 
+            utttDiv.style.display = 'block' 
+            threelancersDiv.style.display = 'block' 
+            backToTop.style.display = 'block'
+
+            tutonetDiv.scrollIntoView()
           }
         });
         }
@@ -200,7 +233,22 @@ export default {
       a.style.pointerEvents = 'auto';
 
 
-    
+      const nav = document.querySelector('nav')
+      const aboutDiv = document.querySelector('#about')
+      const videostoreDiv = document.querySelector('#videostore')
+      const sancbookDiv = document.querySelector('#sancbook')
+      const utttDiv = document.querySelector('#uttt')
+      const threelancersDiv = document.querySelector('#threelancers')
+      const backToTop = document.querySelector('#backToTop')
+      nav.style.pointerEvents = 'auto' 
+      aboutDiv.style.display = 'block' 
+      videostoreDiv.style.display = 'block' 
+      sancbookDiv.style.display = 'block' 
+      utttDiv.style.display = 'block' 
+      threelancersDiv.style.display = 'block' 
+      backToTop.style.display = 'block'
+
+      tutonetDiv.scrollIntoView()
 
 
     }

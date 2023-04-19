@@ -2,6 +2,7 @@
   <div>
     <AboutWinston />
     <Navbar />
+    <Videostore />
     <Uttt />
     <Sancbook />
     <Threelancers />
@@ -14,6 +15,7 @@
 // @ is an alias to /src
 import Navbar from '@/components/Navbar.vue'
 import AboutWinston from '@/components/AboutWinston.vue'
+import Videostore from '@/components/Videostore.vue'
 import Uttt from '@/components/Uttt.vue'
 import Sancbook from '@/components/Sancbook.vue'
 import Threelancers from '@/components/Threelancers.vue'
@@ -29,6 +31,7 @@ export default {
   components: {
     Navbar,
     AboutWinston,
+    Videostore,
     Uttt,
     Sancbook,
     Threelancers,
@@ -48,7 +51,7 @@ export default {
                 //     clearInterval(scrolling);
                     let selected;
                     let bottom = Infinity;
-                    const body = this.document.querySelector('body');
+                    const videostore = this.document.querySelector('#videostore')
                     const uttt = this.document.querySelector('#uttt')
                     const sancbook = this.document.querySelector('#sancbook')
                     const threelancers = this.document.querySelector('#threelancers')
@@ -58,31 +61,37 @@ export default {
                                 selected = 'About Winston';
                                 bottom = about.getBoundingClientRect().bottom;
                             }
-                    }
+                    };
+                    if (videostore.getBoundingClientRect().bottom >= 400) {
+                        if (videostore.getBoundingClientRect().bottom < bottom) {
+                                selected = 'Ultimate Tic-tac-toe';
+                                bottom = videostore.getBoundingClientRect().bottom;
+                            }
+                    };
                     if (uttt.getBoundingClientRect().bottom >= 400) {
                         if (uttt.getBoundingClientRect().bottom < bottom) {
                                 selected = 'Ultimate Tic-tac-toe';
                                 bottom = uttt.getBoundingClientRect().bottom;
                             }
-                    }
+                    };
                     if (sancbook.getBoundingClientRect().bottom >= 400) {
                         if (sancbook.getBoundingClientRect().bottom < bottom) {
                                 selected = 'Sancbook';
                                 bottom = sancbook.getBoundingClientRect().bottom;
                             }
-                    }
+                    };
                     if (threelancers.getBoundingClientRect().bottom >= 400) {
                         if (threelancers.getBoundingClientRect().bottom < bottom) {
                                 selected = '3Lancers';
                                 bottom = threelancers.getBoundingClientRect().bottom;
                             }
-                    }
+                    };
                     if (tutonet.getBoundingClientRect().bottom >= 400) {
                         if (tutonet.getBoundingClientRect().bottom < bottom) {
                                 selected = 'Tutonet';
                                 bottom = tutonet.getBoundingClientRect().bottom;
                             }
-                    }
+                    };
                     const as = nav.querySelectorAll('a');
                     for (let a of as) {
                         const button = a.parentElement
@@ -125,9 +134,6 @@ export default {
        }
         gettingOpaque = setTimeout(function() {
             nav.style.opacity = 1;
-            if (window.innerWidth > 1000) {
-                nav.style.borderBottom = 'groove'
-            }
         }, 3500);
 
         
@@ -139,9 +145,6 @@ export default {
             // downscroll code
         } else if (st < lastScrollTop) {
             nav.style.opacity = 1;
-            if (window.innerWidth > 1000) {
-                nav.style.borderBottom = 'groove'
-            }
         } // else was horizontal scroll
         lastScrollTop = st <= 0 ? 0 : st; // For Mobile or negative scrolling
         
@@ -163,7 +166,8 @@ export default {
     font-family: Arial, Helvetica, sans-serif;
 }
 .navbar {
-    border-bottom: groove;
+    display: flex;
+    box-shadow: inset 0 -6px 6px -6px rgba(0, 0, 0, 0.4);
 }
 h2 {
     text-align: center;
@@ -215,6 +219,9 @@ p.esc {
     --box-shadow-color: white;
     overflow: hidden;
 }
+.videostore.enlarged {
+    height: 490px;
+}
 .uttt.enlarged {
     height: 490px;
 }
@@ -228,6 +235,14 @@ p.esc {
     background-color: lightcyan;
     min-height: 100vh;
     padding: 50px 0 50px 0;
+}
+#videostore {
+    background-color: #f3ffd9;
+    min-height: 100vh;
+    padding: 50px 0 50px 0;
+}
+.videostore {
+    cursor: pointer;
 }
 #uttt {
     background-color: #DCDCF5;
@@ -297,12 +312,13 @@ ul {
         font-size: xx-large;
     }
     .navbar {
+        box-shadow: inset 0 -6px 6px -6px rgba(0, 0, 0, 0.6), inset -6px 0 6px -6px rgba(0, 0, 0, 0.6);
+
         opacity: 0.35;
         width: 65px !important;
         padding-right: 1vw !important;
         padding-left: 1vw !important;
         height: auto !important;
-        border-style: groove;
         border-bottom-right-radius: 10px;
         transition: width 1s;
         
@@ -356,6 +372,9 @@ ul {
     #aboutwinston {
     padding: 25px 0 50px 0;
     }
+    #videostore {
+    padding: 25px 0 25px 0;
+    }
     #uttt {
     padding: 25px 0 25px 0;
     }
@@ -367,6 +386,9 @@ ul {
     }
     #tutonet {
     padding: 25px 0 25px 0;
+    }
+    .videostore {
+        cursor: default;
     }
     .uttt {
         cursor: default;

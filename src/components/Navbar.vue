@@ -16,6 +16,7 @@ export default {
   data: function() {
             return {
                 navs: [
+                    { text: 'Video Store', href: 'videostore'},
                     { text: 'Ultimate Tic-tac-toe', href: 'uttt'},
                     { text: 'Sancbook', href: 'sancbook'},
                     { text: '3Lancers', href: '3lancers'},
@@ -28,10 +29,6 @@ export default {
       const nav = event.target;
       nav.style.opacity = 1;
       const navbar = document.querySelector('#navbar');
-      navbar.style.borderBottom = 'groove';
-      if (window.innerWidth <= 1000) {
-        navbar.style.borderRight = 'groove';
-      };
     },
     toggleNavbar(event){
       const hamburger = event.target;
@@ -128,7 +125,6 @@ export default {
 }
 
 #navbar > button:hover {
-  border: groove;
   border-radius: 10px;
   border-width: medium;
   border-color: aliceblue;

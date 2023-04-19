@@ -102,6 +102,26 @@ export default {
           figcaption.style.fontSize = 'x-large';
           sancbook.classList.add('enlarged');
           sancbookDiv.style.background = 'black'
+
+
+          const nav = document.querySelector('nav')
+          const aboutDiv = document.querySelector('#about')
+          const videostoreDiv = document.querySelector('#videostore')
+          const utttDiv = document.querySelector('#uttt')
+          const threelancersDiv = document.querySelector('#threelancers')
+          const tutonetDiv = document.querySelector('#tutonet')
+          const backToTop = document.querySelector('#backToTop')
+          nav.style.pointerEvents = 'none' 
+          aboutDiv.style.display = 'none' 
+          videostoreDiv.style.display = 'none' 
+          utttDiv.style.display = 'none' 
+          threelancersDiv.style.display = 'none' 
+          tutonetDiv.style.display = 'none' 
+          backToTop.style.display = 'none'
+
+
+
+
           const a = sancbookDiv.querySelector('a');
           a.style.color = 'currentcolor';
           a.style.pointerEvents = 'none';
@@ -139,6 +159,23 @@ export default {
                   sancbook.remove()
                 }
               }
+
+              const nav = document.querySelector('nav')
+              const aboutDiv = document.querySelector('#about')
+              const videostoreDiv = document.querySelector('#videostore')
+              const utttDiv = document.querySelector('#uttt')
+              const threelancersDiv = document.querySelector('#threelancers')
+              const tutonetDiv = document.querySelector('#tutonet')
+              const backToTop = document.querySelector('#backToTop')
+              nav.style.pointerEvents = 'auto' 
+              aboutDiv.style.display = 'block' 
+              videostoreDiv.style.display = 'block' 
+              utttDiv.style.display = 'block' 
+              threelancersDiv.style.display = 'block' 
+              tutonetDiv.style.display = 'block' 
+              backToTop.style.display = 'block'
+
+              sancbookDiv.scrollIntoView();
             }
           });
         }
@@ -176,6 +213,23 @@ export default {
       const a = sancbookDiv.querySelector('a')
       a.style.color = 'black'
       a.style.pointerEvents = 'auto'
+
+      const nav = document.querySelector('nav')
+      const aboutDiv = document.querySelector('#about')
+      const videostoreDiv = document.querySelector('#videostore')
+      const utttDiv = document.querySelector('#uttt')
+      const threelancersDiv = document.querySelector('#threelancers')
+      const tutonetDiv = document.querySelector('#tutonet')
+      const backToTop = document.querySelector('#backToTop')
+      nav.style.pointerEvents = 'auto' 
+      aboutDiv.style.display = 'block' 
+      videostoreDiv.style.display = 'block' 
+      utttDiv.style.display = 'block' 
+      threelancersDiv.style.display = 'block' 
+      tutonetDiv.style.display = 'block' 
+      backToTop.style.display = 'block'
+
+      sancbookDiv.scrollIntoView();
 
     }
   }
