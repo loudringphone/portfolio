@@ -8,14 +8,14 @@
         <ul>
           <li v-for="d in description" :key="d.id">{{ d }}</li>
         </ul>
-        <!-- <div class="grid-container" >
+        <div class="grid-container" >
             <div v-for="feature in features" :key="feature.id" class="videostore">
                 <div class="image-container">
                     <img :src='feature.image'  :alt="feature.alt" style="max-width: 500px;" @click="increaseImageSize($event)">
                     <figcaption>{{feature.alt}}</figcaption>
                 </div>
             </div>
-        </div> -->
+        </div>
     </div>
 
 </template>
@@ -27,15 +27,15 @@ export default {
             return {
                 title: 'Video Store',
                 features: [
-                  {image:require('@/assets/sancbook/sending-data-from-rails-to-js.gif'), alt:'Sending data from rails controllers to js to produce the interactive world map with Gon'},
-                  {image:require('@/assets/sancbook/web-scraping.gif'), alt:'Scraping data from Wikipedia and Youtube with Nokogiri and YouTube Data API'},
-                  {image:require('@/assets/sancbook/instant-messaging.gif'), alt:'Instant messaging with Ajax'},
-                  {image:require('@/assets/sancbook/signup.gif'), alt:'Signup and error messages with Rails Active Record Validations'}
+                  {image:require('@/assets/videostore/rowy-and-using-derivative-functions.gif'), alt:'Using rowy as the content management system to visualise database'},
+                  {image:require('@/assets/videostore/wishlist-and-cart.gif'), alt:'Dynamic cart and wishlist'},
+                  {image:require('@/assets/videostore/addresses.gif'), alt:'Dynamic address input fields'},
+                  {image:require('@/assets/videostore/stripe.gif'), alt:'Stripe client and server integration'}
                 ],
                 url: 'https://videostore.netlify.app/',
                 category: 'eCommerce platform',
                 tech: 'React | Firebase | Rowy | Netlify',
-                description: ['Work in Progress']
+                description: ['Stripe client and server integration with Firebase and React', 'Cloud functions and webhooks']
             };
         },
   methods: {
@@ -79,7 +79,7 @@ export default {
           const html = gridContainer.parentElement.parentElement.parentElement.parentElement
           html.style.pointerEvents = "none";
           html.style.overflow="hidden";
-          gridContainer.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          // gridContainer.scrollIntoView({ behavior: 'smooth', block: 'start' });
           setTimeout(() => {
             html.style.overflow="overlay";
             html.style.pointerEvents = "auto";
@@ -112,13 +112,13 @@ export default {
             const threelancersDiv = document.querySelector('#threelancers')
             const tutonetDiv = document.querySelector('#tutonet')
             const backToTop = document.querySelector('#backToTop')
-            nav.style.pointerEvents = 'none' 
-            aboutDiv.style.display = 'none' 
-            utttDiv.style.display = 'none' 
-            sancbookDiv.style.display = 'none' 
-            threelancersDiv.style.display = 'none' 
-            tutonetDiv.style.display = 'none' 
-            backToTop.style.display = 'none' 
+            // nav.style.pointerEvents = 'none' 
+            // aboutDiv.style.display = 'none' 
+            // utttDiv.style.display = 'none' 
+            // sancbookDiv.style.display = 'none' 
+            // threelancersDiv.style.display = 'none' 
+            // tutonetDiv.style.display = 'none' 
+            // backToTop.style.display = 'none' 
 
 
           const a = videostoreDiv.querySelector('a');
@@ -177,7 +177,7 @@ export default {
                 tutonetDiv.style.display = 'block' 
                 backToTop.style.display = 'block' 
 
-                videostoreDiv.scrollIntoView()
+                // videostoreDiv.scrollIntoView()
 
             }
           });
@@ -232,7 +232,7 @@ export default {
         tutonetDiv.style.display = 'block' 
         backToTop.style.display = 'block'
 
-        videostoreDiv.scrollIntoView()
+        // videostoreDiv.scrollIntoView()
 
 
     }

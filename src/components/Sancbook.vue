@@ -32,7 +32,7 @@ export default {
                   {image:require('@/assets/sancbook/instant-messaging.gif'), alt:'Instant messaging with Ajax'},
                   {image:require('@/assets/sancbook/signup.gif'), alt:'Signup and error messages with Rails Active Record Validations'}
                 ],
-                url: 'https://sancbook.herokuapp.com/',
+                url: 'https://youtu.be/7fH1DrjlxoU/',
                 category: 'Social media platform',
                 tech: 'Ruby on Rails | postgreSQL | SCSS | Heroku',
                 description: ['CRUD systems using Ruby on Rails and PostgreSQL', 'Gon, Nokogiri, Cloudinary, Google search API & etc', 'Instant messaging with Ajax']
@@ -77,7 +77,7 @@ export default {
           const html = gridContainer.parentElement.parentElement.parentElement.parentElement
           html.style.pointerEvents = "none";
           html.style.overflow="hidden";
-          gridContainer.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          // gridContainer.scrollIntoView({ behavior: 'smooth', block: 'start' });
           setTimeout(() => {
             html.style.overflow="overlay";
             html.style.pointerEvents = "auto";
@@ -111,13 +111,14 @@ export default {
           const threelancersDiv = document.querySelector('#threelancers')
           const tutonetDiv = document.querySelector('#tutonet')
           const backToTop = document.querySelector('#backToTop')
-          nav.style.pointerEvents = 'none' 
-          aboutDiv.style.display = 'none' 
-          videostoreDiv.style.display = 'none' 
-          utttDiv.style.display = 'none' 
-          threelancersDiv.style.display = 'none' 
-          tutonetDiv.style.display = 'none' 
-          backToTop.style.display = 'none'
+          // nav.style.pointerEvents = 'none' 
+          // aboutDiv.style.display = 'none' 
+          // videostoreDiv.style.display = 'none' 
+          // utttDiv.style.display = 'none' 
+          // threelancersDiv.style.display = 'none' 
+          // tutonetDiv.style.display = 'none' 
+          // backToTop.style.display = 'none'
+          
 
 
 
@@ -175,7 +176,7 @@ export default {
               tutonetDiv.style.display = 'block' 
               backToTop.style.display = 'block'
 
-              sancbookDiv.scrollIntoView();
+              // sancbookDiv.scrollIntoView();
             }
           });
         }
@@ -229,7 +230,7 @@ export default {
       tutonetDiv.style.display = 'block' 
       backToTop.style.display = 'block'
 
-      sancbookDiv.scrollIntoView();
+      // sancbookDiv.scrollIntoView();
 
     }
   }

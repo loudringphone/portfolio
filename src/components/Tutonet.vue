@@ -83,7 +83,7 @@ export default {
           const html = h2.parentElement.parentElement.parentElement.parentElement
           html.style.pointerEvents = "none";
           html.style.overflow="hidden";
-          h2.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          // h2.scrollIntoView({ behavior: 'smooth', block: 'start' });
           setTimeout(() => {
             html.style.overflow="overlay";
             html.style.pointerEvents = "auto";
@@ -121,13 +121,13 @@ export default {
           const utttDiv = document.querySelector('#uttt')
           const threelancersDiv = document.querySelector('#threelancers')
           const backToTop = document.querySelector('#backToTop')
-          nav.style.pointerEvents = 'none' 
-          aboutDiv.style.display = 'none' 
-          videostoreDiv.style.display = 'none' 
-          sancbookDiv.style.display = 'none' 
-          utttDiv.style.display = 'none' 
-          threelancersDiv.style.display = 'none' 
-          backToTop.style.display = 'none'
+          // nav.style.pointerEvents = 'none' 
+          // aboutDiv.style.display = 'none' 
+          // videostoreDiv.style.display = 'none' 
+          // sancbookDiv.style.display = 'none' 
+          // utttDiv.style.display = 'none' 
+          // threelancersDiv.style.display = 'none' 
+          // backToTop.style.display = 'none'
 
           const a = tutonetDiv.querySelector('a');
           const ps = tutonetDiv.querySelectorAll('p');
@@ -191,7 +191,7 @@ export default {
             threelancersDiv.style.display = 'block' 
             backToTop.style.display = 'block'
 
-            tutonetDiv.scrollIntoView()
+            // tutonetDiv.scrollIntoView()
           }
         });
         }
@@ -248,7 +248,7 @@ export default {
       threelancersDiv.style.display = 'block' 
       backToTop.style.display = 'block'
 
-      tutonetDiv.scrollIntoView()
+      // tutonetDiv.scrollIntoView()
 
 
     }

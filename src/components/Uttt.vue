@@ -84,7 +84,7 @@ export default {
           const html = gridContainer.parentElement.parentElement.parentElement.parentElement
           html.style.pointerEvents = "none";
           html.style.overflow="hidden";
-          gridContainer.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          // gridContainer.scrollIntoView({ behavior: 'smooth', block: 'start' });
           setTimeout(() => {
             html.style.overflow="overlay";
             html.style.pointerEvents = "auto";
@@ -119,14 +119,14 @@ export default {
           const threelancersDiv = document.querySelector('#threelancers')
           const tutonetDiv = document.querySelector('#tutonet')
           const backToTop = document.querySelector('#backToTop')
-          nav.style.pointerEvents = 'none' 
-          aboutDiv.style.display = 'none' 
-          videostoreDiv.style.display = 'none' 
-          sancbookDiv.style.display = 'none' 
-          threelancersDiv.style.display = 'none' 
-          tutonetDiv.style.display = 'none' 
-          backToTop.style.display = 'none'
-          nav.style.display = 'flex' 
+          // nav.style.pointerEvents = 'none' 
+          // aboutDiv.style.display = 'none' 
+          // videostoreDiv.style.display = 'none' 
+          // sancbookDiv.style.display = 'none' 
+          // threelancersDiv.style.display = 'none' 
+          // tutonetDiv.style.display = 'none' 
+          // backToTop.style.display = 'none'
+          // nav.style.display = 'flex' 
 
 
 
@@ -183,7 +183,7 @@ export default {
             threelancersDiv.style.display = 'block' 
             tutonetDiv.style.display = 'block' 
             backToTop.style.display = 'block'
-            utttDiv.scrollIntoView()
+            // utttDiv.scrollIntoView()
 
           }
         });
@@ -245,7 +245,7 @@ export default {
       threelancersDiv.style.display = 'block' 
       tutonetDiv.style.display = 'block' 
       backToTop.style.display = 'block'
-      utttDiv.scrollIntoView()
+      // utttDiv.scrollIntoView()
     }
   }
 

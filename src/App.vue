@@ -220,7 +220,10 @@ p.esc {
     overflow: hidden;
 }
 .videostore.enlarged {
-    height: 490px;
+    height: max-content;
+}
+.videostore.enlarged img {
+    height: 110%;
 }
 .uttt.enlarged {
     height: 490px;
