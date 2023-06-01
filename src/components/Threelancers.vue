@@ -32,7 +32,7 @@ export default {
                   {image:require('@/assets/threelancers/signup-authentication.gif'), alt:'Signup and error messages with Rails Active Record Validations'},
                   {image:require('@/assets/threelancers/jwt-sessions.gif'), alt:'JWT-based authentication implemented in Ruby on Rails'}
                 ],
-                url: 'https://3lancers.netlify.app/',
+                url: '',
                 category: 'Mobile marketplace',
                 tech: 'React  | Ruby on Rails | postgreSQL | Netlify | Heroku',
                 description: ['Ruby on Rails as back-end', 'React as front-end', 'JWT token sign-in', 'Google Maps Geocoding API']
