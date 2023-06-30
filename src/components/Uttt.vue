@@ -1,6 +1,5 @@
 <template>
   <div id="uttt" @mouseover="mouseOver()" @touchstart="touchStart()">
-    <button class="close-btn" @click="decreaseImageSize($event)" >&times;</button>
     <h2>{{ title }}</h2>
     <p>{{ category }}</p>
     <a :href='url' target="_blank">{{ url }}</a>
@@ -12,7 +11,7 @@
     <div class="grid-container" >
         <div v-for="feature in features" :key="feature.id" class="uttt">
             <div class="image-container">
-                <img :src='feature.image'  :alt="feature.alt" style="max-width: 500px;" @click="increaseImageSize($event)">
+                <img :src='feature.image'  :alt="feature.alt" style="max-width: 500px;">
                 <figcaption>{{feature.alt}}</figcaption>
             </div>
         </div>
@@ -70,183 +69,6 @@ export default {
         }
       }
     },
-    increaseImageSize(event) {
-      if (window.innerWidth > 1000) {
-        const img = event.target;
-        const figcaption = img.parentElement.querySelector('figcaption');
-        const utttDiv = document.querySelector('#uttt')
-        const uttt = img.parentElement.parentElement;
-        let uttts = uttt.parentElement.querySelectorAll('.uttt');
-        uttt.style.pointerEvents = 'auto';
-        uttt.style.filter = 'brightness(100%)';
-        if (img.style.maxWidth === '500px') {
-          const gridContainer = utttDiv.querySelector('.grid-container');
-          const html = gridContainer.parentElement.parentElement.parentElement.parentElement
-          html.style.pointerEvents = "none";
-          html.style.overflow="hidden";
-          // gridContainer.scrollIntoView({ behavior: 'smooth', block: 'start' });
-          setTimeout(() => {
-            html.style.overflow="overlay";
-            html.style.pointerEvents = "auto";
-          }, 150);
-
-          const btnClose = utttDiv.querySelector('.close-btn')
-          btnClose.style.display = 'block'
-          let phExisted = false;
-          for (let uttt of uttts) {
-            if (uttt.classList.contains('placeholder')) {
-              phExisted = true;
-            }
-          }
-          if (!phExisted) {
-            const placeholder = uttt.cloneNode(true);
-            placeholder.classList.add('placeholder');
-            placeholder.style.pointerEvents = 'none';
-            placeholder.style.filter = 'brightness(30%)';
-            uttt.insertAdjacentElement('afterend', placeholder);
-          }
-          img.style.maxWidth = '900px';
-          img.parentElement.parentElement.style.maxWidth = '900px';
-          // closeButton.style.display = 'block';
-          figcaption.style.fontSize = 'x-large';
-          uttt.classList.add('enlarged');
-          utttDiv.style.background = 'black'
-
-          const nav = document.querySelector('nav')
-          const aboutDiv = document.querySelector('#about')
-          const videostoreDiv = document.querySelector('#videostore')
-          const sancbookDiv = document.querySelector('#sancbook')
-          const threelancersDiv = document.querySelector('#threelancers')
-          const tutonetDiv = document.querySelector('#tutonet')
-          const backToTop = document.querySelector('#backToTop')
-          // nav.style.pointerEvents = 'none' 
-          // aboutDiv.style.display = 'none' 
-          // videostoreDiv.style.display = 'none' 
-          // sancbookDiv.style.display = 'none' 
-          // threelancersDiv.style.display = 'none' 
-          // tutonetDiv.style.display = 'none' 
-          // backToTop.style.display = 'none'
-          // nav.style.display = 'flex' 
-
-
-
-
-          const a = utttDiv.querySelector('a');
-          a.style.color = 'currentcolor';
-          a.style.pointerEvents = 'none';
-          uttts.forEach(uttt => {
-              uttt.style.pointerEvents = 'none';
-              uttt.style.filter = 'brightness(30%)';
-              uttt.firstChild.style.opacity = '0.2'
-              uttt.style.cursor = 'initial';
-          });
-          uttt.style.filter = 'brightness(100%)';
-          uttt.firstChild.style.opacity = '1'
-          uttt.style.pointerEvents = 'auto';
-
-          const p = document.createElement('p');
-          p.textContent = 'Press Esc to close'
-          p.classList.add('esc')
-          utttDiv.appendChild(p);
-          window.addEventListener("keydown", function(event) {
-          if (event.key === "Escape") {
-            a.style.color = 'black'
-            a.style.pointerEvents = 'auto'
-            p.remove()
-            utttDiv.style.background = '#DCDCF5';
-            btnClose.style.display = 'none';
-            figcaption.style.fontSize = 'initial';
-            uttt.classList.remove('enlarged');
-            img.style.maxWidth = '500px'
-            uttts = uttt.parentElement.querySelectorAll('.uttt');
-            for (let uttt of uttts) {
-              uttt.style.pointerEvents = 'auto';
-              uttt.style.filter = 'brightness(100%)';
-              uttt.style.cursor = 'pointer';
-              uttt.firstChild.style.opacity = '1'
-              if (uttt.classList.contains('placeholder')) {
-                uttt.remove()
-              }
-            }
-
-            const nav = document.querySelector('nav')
-            const aboutDiv = document.querySelector('#about')
-            const videostoreDiv = document.querySelector('#videostore')
-            const sancbookDiv = document.querySelector('#sancbook')
-            const threelancersDiv = document.querySelector('#threelancers')
-            const tutonetDiv = document.querySelector('#tutonet')
-            const backToTop = document.querySelector('#backToTop')
-            nav.style.pointerEvents = 'auto' 
-            aboutDiv.style.display = 'block' 
-            videostoreDiv.style.display = 'block' 
-            sancbookDiv.style.display = 'block' 
-            threelancersDiv.style.display = 'block' 
-            tutonetDiv.style.display = 'block' 
-            backToTop.style.display = 'block'
-            // utttDiv.scrollIntoView()
-
-          }
-        });
-
-
-
-
-
-
-
-
-        }
-      }
-    },
-    decreaseImageSize(event) {
-      const utttDiv = document.querySelector("#uttt")
-      const enlarged = utttDiv.querySelector(".enlarged")
-      enlarged.classList.remove('enlarged');
-      const img = enlarged.querySelector('img')
-      img.style.maxWidth = '500px';
-      const figcaption = enlarged.querySelector('figcaption');
-      const btnClose = event.target;
-      
-      const uttt = btnClose.parentElement.parentElement;
-      let uttts = uttt.parentElement.querySelectorAll('.uttt');
-      for (let uttt of uttts) {
-        uttt.style.pointerEvents = 'auto';
-        uttt.style.filter = 'brightness(100%)';
-        uttt.style.cursor = 'pointer';
-        uttt.firstChild.style.opacity = '1'
-        if (uttt.classList.contains('placeholder')) {
-          uttt.remove()
-        }
-      }
-      const esc = utttDiv.querySelector('.esc')
-      if (esc != null) {
-        esc.remove()
-      }
-      utttDiv.style.background = '#DCDCF5';
-      btnClose.style.display = 'none';
-      figcaption.style.fontSize = 'initial';
-      uttt.classList.remove('enlarged');
-
-      const a = utttDiv.querySelector('a')
-      a.style.color = 'black'
-      a.style.pointerEvents = 'auto'
-
-      const nav = document.querySelector('nav')
-      const aboutDiv = document.querySelector('#about')
-      const videostoreDiv = document.querySelector('#videostore')
-      const sancbookDiv = document.querySelector('#sancbook')
-      const threelancersDiv = document.querySelector('#threelancers')
-      const tutonetDiv = document.querySelector('#tutonet')
-      const backToTop = document.querySelector('#backToTop')
-      nav.style.pointerEvents = 'auto' 
-      aboutDiv.style.display = 'block' 
-      videostoreDiv.style.display = 'block' 
-      sancbookDiv.style.display = 'block' 
-      threelancersDiv.style.display = 'block' 
-      tutonetDiv.style.display = 'block' 
-      backToTop.style.display = 'block'
-      // utttDiv.scrollIntoView()
-    }
   }
 
 }

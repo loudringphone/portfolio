@@ -28,10 +28,6 @@
   <b-button variant="outline-primary" title="copy to clipboard:0422882062" @click="copyMobile()"><i class="bi bi-phone"></i></b-button>
   <toast ref="toast" />
 
-  <div class='footnote'>
-    <p>Oh by the way, if you are browsing my portfolio in desktop mode, you can enlarge the gifs by clicking on them!</p>
-  </div>
-
   <div id="notification">Redirect to <a href="https://www.linkedin.com/in/winston-lau/" target="_blank">Winston's Linkedin</a> in <span>5 seconds</span>. <br> Click this notification bar to abort the redirection.</div>
   </div>
 
