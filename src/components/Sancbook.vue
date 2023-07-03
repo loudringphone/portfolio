@@ -3,6 +3,7 @@
         <h2>{{ title }}</h2>
         <p>{{ category }}</p>
         <a :href='url' target="_blank">{{ url }}</a>
+        <a :href='git' target="_blank">{{ git }}</a>
         <p>{{ tech }}</p>
         <ul>
           <li v-for="d in description" :key="d.id">{{ d }}</li>
@@ -32,6 +33,7 @@ export default {
                   {image:require('@/assets/sancbook/signup.gif'), alt:'Signup and error messages with Rails Active Record Validations'}
                 ],
                 url: 'https://youtu.be/7fH1DrjlxoU/',
+                git: 'https://github.com/loudringphone/sancbook',
                 category: 'Social media platform',
                 tech: 'Ruby on Rails | postgreSQL | SCSS | Heroku',
                 description: ['CRUD systems using Ruby on Rails and PostgreSQL', 'Gon, Nokogiri, Cloudinary, Google search API & etc', 'Instant messaging with Ajax']

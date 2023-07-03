@@ -3,6 +3,7 @@
         <h2>{{ title }}</h2>
         <p>{{ category }}</p>
         <a :href='url' target="_blank">{{ url }}</a>
+        <a :href='git' target="_blank">{{ git }}</a>
         <p>{{ tech }}</p>
         <ul>
           <li v-for="d in description" :key="d.id">{{ d }}</li>
@@ -32,6 +33,7 @@ export default {
                   {image:require('@/assets/videostore/stripe.gif'), alt:'Stripe client and server integration'}
                 ],
                 url: 'https://videostore.netlify.app/',
+                git: 'https://github.com/loudringphone/videostore',
                 category: 'eCommerce platform',
                 tech: 'ReactJS | Firebase | Stripe | Rowy | Netlify',
                 description: ['Stripe client and server integration with Firebase and ReactJS', 'Firebase Cloud Functions and webhooks']

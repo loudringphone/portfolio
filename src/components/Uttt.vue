@@ -3,6 +3,7 @@
     <h2>{{ title }}</h2>
     <p>{{ category }}</p>
     <a :href='url' target="_blank">{{ url }}</a>
+    <a :href='git' target="_blank">{{ git }}</a>
     <p>{{ tech }}</p>
     <ul>
       <li v-for="d in description" :key="d.id">{{ d }}</li>
@@ -33,6 +34,7 @@ export default {
                   {image:require('@/assets/uttt/options.gif'), alt:'Options'}
                 ],
                 url: 'https://loudringphone.github.io/ultimate-tictactoe/',
+                git: 'https://github.com/loudringphone/ultimate-tictactoe',
                 category: 'Browser game',
                 tech: 'Javascript | CSS | HTML | DOM',
                 description: ['Interactive game and AI Algorithm (self-build AI and Minimax)', 'DOM manipulation with vanilla JavaScript', 'Character selection, Local storage, Board rest and Sound effect']

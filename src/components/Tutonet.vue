@@ -3,6 +3,7 @@
     <h2>{{ title }}</h2>
     <p>{{ category }}</p>
     <a :href='url' target="_blank">{{ url }}</a>
+    <a :href='git' target="_blank">{{ git }}</a>
     <p>{{ tech }}</p>
     <ul>
         <li v-for="d in description" :key="d.id">{{ d }}</li>
@@ -32,6 +33,7 @@ export default {
                   {image:require('@/assets/tutonet/filter-table.gif'), alt:'Filterable table'}
                 ],
                 url: 'https://tutonet.netlify.app/',
+                git: 'https://github.com/loudringphone/tutonet',
                 category: 'Task management',
                 tech: 'Vue | Quasar | Supabase | Netlify',
                 description: ['DOM manipulation with vue', 'Supabase database', 'Quasar framework']
