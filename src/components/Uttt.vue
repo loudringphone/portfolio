@@ -3,6 +3,7 @@
     <h2>{{ title }}</h2>
     <p>{{ category }}</p>
     <a :href='url' target="_blank">{{ url }}</a>
+    <br>
     <a :href='git' target="_blank">{{ git }}</a>
     <p>{{ tech }}</p>
     <ul>
