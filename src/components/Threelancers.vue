@@ -27,13 +27,13 @@ export default {
                 title: '3Lancers',
                 features: [
                   {image:require('@/assets/threelancers/google-maps-api.gif'), alt:'Google Maps API with fun animation'},
-                  {image:require('@/assets/threelancers/react-interact-with-database.gif'), alt:'Using React as frontend to interact with Postgres in Ruby on Rails'},
+                  {image:require('@/assets/threelancers/react-interact-with-database.gif'), alt:'Using ReactJS as frontend to interact with Postgres in Ruby on Rails'},
                   {image:require('@/assets/threelancers/signup-authentication.gif'), alt:'Signup and error messages with Rails Active Record Validations'},
                   {image:require('@/assets/threelancers/jwt-sessions.gif'), alt:'JWT-based authentication implemented in Ruby on Rails'}
                 ],
                 url: '',
                 category: 'Mobile marketplace',
-                tech: 'React  | Ruby on Rails | postgreSQL | Netlify | Heroku',
+                tech: 'ReactJS  | Ruby on Rails | postgreSQL | Netlify | Heroku',
                 description: ['Ruby on Rails as back-end', 'React as front-end', 'JWT token sign-in', 'Google Maps Geocoding API']
             };
         },

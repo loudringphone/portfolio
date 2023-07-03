@@ -33,8 +33,8 @@ export default {
                 ],
                 url: 'https://videostore.netlify.app/',
                 category: 'eCommerce platform',
-                tech: 'React | Firebase | Rowy | Netlify',
-                description: ['Stripe client and server integration with Firebase and React', 'Cloud functions and webhooks']
+                tech: 'ReactJS | Firebase | Stripe | Rowy | Netlify',
+                description: ['Stripe client and server integration with Firebase and ReactJS', 'Firebase Cloud Functions and webhooks']
             };
         },
   methods: {
