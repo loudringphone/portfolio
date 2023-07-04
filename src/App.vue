@@ -3,6 +3,7 @@
     <AboutWinston />
     <Navbar />
     <Videostore />
+    <Sparkstudio />
     <Uttt />
     <Sancbook />
     <Threelancers />
@@ -16,6 +17,7 @@
 import Navbar from '@/components/Navbar.vue'
 import AboutWinston from '@/components/AboutWinston.vue'
 import Videostore from '@/components/Videostore.vue'
+import Sparkstudio from '@/components/Sparkstudio.vue'
 import Uttt from '@/components/Uttt.vue'
 import Sancbook from '@/components/Sancbook.vue'
 import Threelancers from '@/components/Threelancers.vue'
@@ -32,6 +34,7 @@ export default {
     Navbar,
     AboutWinston,
     Videostore,
+    Sparkstudio,
     Uttt,
     Sancbook,
     Threelancers,
@@ -208,32 +211,6 @@ p.esc {
     text-align: center;
     font-size: large;
 }
-.enlarged {
-    position: absolute;
-    justify-self: center;
-    margin-left: 5%;
-    margin-top: 5%;
-    z-index: 1;
-    border-radius: 15px;
-    box-shadow: 0 0 30px var(--box-shadow-color);
-    --box-shadow-color: white;
-    overflow: hidden;
-}
-.videostore.enlarged {
-    height: max-content;
-}
-.videostore.enlarged img {
-    height: 110%;
-}
-.uttt.enlarged {
-    height: 490px;
-}
-.sancbook.enlarged {
-    height: 725px;
-}
-.tutonet.enlarged {
-    height: 485px;
-}
 #about {
     background-color: lightcyan;
     min-height: 100vh;
@@ -244,40 +221,34 @@ p.esc {
     min-height: 100vh;
     padding: 50px 0 50px 0;
 }
-.videostore {
-    cursor: pointer;
+#sparkstudio {
+    background-color: rgb(235, 235, 235);
+    min-height: 100vh;
+    padding: 50px 0 50px 0;
 }
+
 #uttt {
     background-color: #DCDCF5;
     min-height: 100vh;
     padding: 50px 0 50px 0;
 }
-.uttt {
-    cursor: pointer;
-}
+
 #sancbook {
     background-color: #FEF0E8;
     min-height: 100vh;
     padding: 50px 0 50px 0;
 }
-.sancbook {
-    cursor: pointer;
-}
+
 #threelancers {
     background-color: #DCF5DC;
     min-height: 100vh;
     padding: 50px 0 50px 0;
 }
-.threelancers {
-    cursor: pointer;
-}
+
 #tutonet {
     background-color: #ffd7de;
     min-height: 100vh;
     padding: 50px 0 50px 0;
-}
-.tutonet {
-    cursor: pointer;
 }
 
 #backToTop {
