@@ -2,9 +2,15 @@
 
   <div id="about" @mouseover="mouseOver()" @touchstart="touchStart()">
     <h2>{{ title }}</h2>
-    <br>
     <h3>Hello! I'm a junior software developer based in Sydney!</h3>
-    <br><br>
+    <br>
+    <b-button variant="outline-primary" title="Winston's Resume" @click="redirect($event)"><i class="bi bi-file-person"></i></b-button>
+    <b-button variant="outline-primary" title="mailto:wingfunglau@gmail.com" @click="mailTo()"><i class="bi bi-envelope"></i></b-button>
+    <b-button variant="outline-primary" 
+    title="Winston's Linkedin" @click="redirect($event)"><i class="bi bi-linkedin"></i></b-button>
+    <b-button variant="outline-primary" title="Winston's Github" @click="redirect($event)"><i class="bi bi-github"></i></b-button>
+    <b-button variant="outline-primary" title="copy to clipboard:0422882062" @click="copyMobile()"><i class="bi bi-phone"></i></b-button>
+    <br><br><br>
     <div class='profile'>
       <p class='para1'>
         I have recently graduated from General Assembly where I have learned about both front and back end development. I was an accountant previously and I have wanted to change my career for a long time. Finally I have committed myself in a 12 week intensive course at GA and it is the second best decision I have made in my life. (The best one is of course coming to Australia! )
@@ -20,12 +26,7 @@
     </div>
     
 
-  <b-button variant="outline-primary" title="Winston's Resume" @click="redirect($event)"><i class="bi bi-file-person"></i></b-button>
-  <b-button variant="outline-primary" title="mailto:wingfunglau@gmail.com" @click="mailTo()"><i class="bi bi-envelope"></i></b-button>
-  <b-button variant="outline-primary" 
-  title="Winston's Linkedin" @click="redirect($event)"><i class="bi bi-linkedin"></i></b-button>
-  <b-button variant="outline-primary" title="Winston's Github" @click="redirect($event)"><i class="bi bi-github"></i></b-button>
-  <b-button variant="outline-primary" title="copy to clipboard:0422882062" @click="copyMobile()"><i class="bi bi-phone"></i></b-button>
+  
   <toast ref="toast" />
 
   <div id="notification">Redirect to <a href="https://www.linkedin.com/in/winston-lau/" target="_blank">Winston's Linkedin</a> in <span>5 seconds</span>. <br> Click this notification bar to abort the redirection.</div>

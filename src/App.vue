@@ -214,41 +214,55 @@ p.esc {
 #about {
     background-color: lightcyan;
     min-height: 100vh;
-    padding: 50px 0 50px 0;
+    padding: 50px 0 150px 0;
+    background: linear-gradient(to bottom, lightcyan 92.5%,
+     #f3ffd9);
 }
 #videostore {
     background-color: #f3ffd9;
     min-height: 100vh;
-    padding: 50px 0 50px 0;
+    padding: 50px 0 150px 0;
+    background: linear-gradient(to bottom, #f3ffd9 92.5%,
+     rgb(235, 235, 235));
 }
 #sparkstudio {
     background-color: rgb(235, 235, 235);
     min-height: 100vh;
-    padding: 50px 0 50px 0;
+    padding: 50px 0 150px 0;
+    background: linear-gradient(to bottom, rgb(235, 235, 235) 92.5%,
+     #DCDCF5);
 }
 
 #uttt {
     background-color: #DCDCF5;
     min-height: 100vh;
-    padding: 50px 0 50px 0;
+    padding: 50px 0 150px 0;
+    background: linear-gradient(to bottom, #DCDCF5 92.5%,
+     #FEF0E8);
 }
 
 #sancbook {
     background-color: #FEF0E8;
     min-height: 100vh;
-    padding: 50px 0 50px 0;
+    padding: 50px 0 150px 0;
+    background: linear-gradient(to bottom, #FEF0E8 92.5%,
+     #DCF5DC);
 }
 
 #threelancers {
     background-color: #DCF5DC;
     min-height: 100vh;
-    padding: 50px 0 50px 0;
+    padding: 50px 0 150px 0;
+    background: linear-gradient(to bottom, #DCF5DC 92.5%,
+     #ffd7de);
 }
 
 #tutonet {
     background-color: #ffd7de;
     min-height: 100vh;
-    padding: 50px 0 50px 0;
+    padding: 50px 0 150px 0;
+    background: linear-gradient(to bottom, #ffd7de 99%,
+     gainsboro);
 }
 
 #backToTop {

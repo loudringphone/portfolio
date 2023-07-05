@@ -40,12 +40,7 @@ export default {
 
       const p = backToTop.querySelector('p');
       p.style.color = 'currentcolor'
-      let target
-      if (window.innerWidth <= 1000) {
-        target = document.querySelector("#winston")
-      } else {
-        target = document.querySelector("#about")
-      }
+      let target = document.querySelector("#about")
       target.scrollIntoView({ behavior: 'smooth', block: 'start' });
       document.body.style.pointerEvents = "none";
       function preventDefault(e) {
