@@ -161,12 +161,13 @@ export default {
 </script>
 
 <style>
+
 * {
     position: relative;
     overflow: overlay;
     margin: auto;
     text-align: center;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: Helvetica, sans-serif;
 }
 .navbar {
     display: flex;
