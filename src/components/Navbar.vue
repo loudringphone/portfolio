@@ -17,6 +17,7 @@ export default {
             return {
                 navs: [
                     { text: 'Video Store', href: 'videostore'},
+                    { text: 'Spark Studio', href: 'sparkstudio'},
                     { text: 'Ultimate Tic-tac-toe', href: 'uttt'},
                     { text: 'Sancbook', href: 'sancbook'},
                     { text: '3Lancers', href: '3lancers'},
