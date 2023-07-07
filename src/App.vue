@@ -55,6 +55,7 @@ export default {
                     let selected;
                     let bottom = Infinity;
                     const videostore = this.document.querySelector('#videostore')
+                    const sparkstudio = this.document.querySelector('#sparkstudio')
                     const uttt = this.document.querySelector('#uttt')
                     const sancbook = this.document.querySelector('#sancbook')
                     const threelancers = this.document.querySelector('#threelancers')
@@ -67,8 +68,14 @@ export default {
                     };
                     if (videostore.getBoundingClientRect().bottom >= 400) {
                         if (videostore.getBoundingClientRect().bottom < bottom) {
-                                selected = 'Ultimate Tic-tac-toe';
+                                selected = 'Video Store';
                                 bottom = videostore.getBoundingClientRect().bottom;
+                            }
+                    };
+                    if (sparkstudio.getBoundingClientRect().bottom >= 400) {
+                        if (sparkstudio.getBoundingClientRect().bottom < bottom) {
+                                selected = 'Spark Studio';
+                                bottom = sparkstudio.getBoundingClientRect().bottom;
                             }
                     };
                     if (uttt.getBoundingClientRect().bottom >= 400) {
@@ -115,20 +122,19 @@ export default {
                                 nav.classList.remove('expanded');
                                 nav.style.opacity = 0.35;
                             }
-                    }, 150);
+                    }, 2000);
                 }
                 then = now
             }, 275);
     });
 
-
     let lastScrollTop = 0;
 
     window.addEventListener('scroll', function() {
        const nav = this.document.querySelector('.navbar');
-       if (!nav.classList.contains('expanded')) {
-        // nav.style.opacity = 0.35;
-       }
+    //    if (!nav.classList.contains('expanded')) {
+    //     nav.style.opacity = 0.35;
+    //    }
        if (window.innerWidth > 1000) {
         nav.style.border = 'none'
        }
