@@ -1,7 +1,7 @@
 <template>
   <div>
-    <AboutWinston />
     <Navbar />
+    <AboutWinston />
     <Videostore />
     <Sparkstudio />
     <Uttt />
@@ -120,7 +120,7 @@ export default {
                     setTimeout(() => {
                             if (isExpanded) {
                                 nav.classList.remove('expanded');
-                                nav.style.opacity = 0.35;
+                                nav.style.opacity = 0.5;
                             }
                     }, 2000);
                 }
@@ -175,10 +175,8 @@ export default {
     text-align: center;
     font-family: Helvetica, sans-serif;
 }
-.navbar {
-    display: flex;
-    box-shadow: inset 0 -6px 6px -6px rgba(0, 0, 0, 0.4);
-}
+
+
 h2 {
     text-align: center;
     padding-top: 20px;
@@ -292,6 +290,8 @@ ul {
 }
 .bi-list {
     display: none;
+    cursor: pointer;
+    font-size: xx-large;
 }
 
 
@@ -299,48 +299,59 @@ ul {
     * {
         position: relative;
     }
+    .triangle {
+        display: block;
+    }
     .bi-list {
         display: block;
-        margin-left: 5.5px;
         
-        cursor: pointer;
-        font-size: xx-large;
     }
-    .navbar {
+    #navbar {
+        color: red;
         box-shadow: inset 0 -6px 6px -6px rgba(0, 0, 0, 0.6), inset -6px 0 6px -6px rgba(0, 0, 0, 0.6);
-
-        opacity: 0.35;
-        width: 65px !important;
-        padding-right: 1vw !important;
-        padding-left: 1vw !important;
-        height: auto !important;
+        opacity: 0.5;
+        width: 0px !important;
+        /* min-height: 22220px !important; */
+        padding-right: 0;
+        padding-left: 0;
+        height: 430px !important;
         border-bottom-right-radius: 10px;
-        transition: width 1s;
+        transition: height 1s, width 1s;
+        cursor: pointer;
         
     }
     .navbar > button {
         display: none;
     }
     
-    .navbar:hover {
+    #navbar:hover {
         opacity: 1;
     }
-    .navbar.expanded {
+    #navbar.expanded {
+        color: initial;
+        cursor: auto;
         opacity: 1;
         display: flex;
+        overflow: hidden;
         flex-direction: column;
         align-items: flex-start;
         justify-content: left;
+        height: 430px !important;
         width: 200px !important;
         padding-bottom: 20px;
         font-size: small;
         line-height: 250%;
     }
     .navbar.expanded > button {
-        margin-left: 0px;
+        margin-left: 0.3rem;
+        overflow: hidden;
+        text-wrap: nowrap;
         margin-right: 0px;
         margin-top: 20px;
         display: block;
+    }
+    .navbar.expanded > button:nth-child(2) {
+        margin-top: 50px !important
     }
 
 

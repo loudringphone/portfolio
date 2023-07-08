@@ -1,11 +1,16 @@
 <template>
 
-  <nav id="navbar" class="navbar navbar-expand-lg navbar-light bg-light" @mouseover="gettingOpaque($event)">
-    <i class="bi bi-list" @click="toggleNavbar($event)"></i>
+  <nav id="navbar" class="navbar navbar-expand-lg navbar-light bg-light" @mouseover="gettingOpaque($event)" @click="toggleNavbar($event)" >
+    <div class='tagme'>
+      <i class="bi bi-list"></i>
+      <p>tag me 🥹</p>
+      </div>
+    
     <button @click="scrollTo($event)" class="btn btn-block btn-lg glow-button btn-warning"><a class="selected" href="about" @click="scrollTo($event)">About Winston</a></button>
     <button @click="scrollTo($event)" v-for="(nav, i) in navs" :key="i">
       <a :href="nav.href" @click="scrollTo($event)">{{nav.text}}</a>
     </button>
+    
 </nav>
 
 </template>
@@ -29,16 +34,31 @@ export default {
     gettingOpaque(event){
       const nav = event.target;
       nav.style.opacity = 1;
-      const navbar = document.querySelector('#navbar');
+      const navbar = document.querySelector('.navbar');
     },
     toggleNavbar(event){
-      const hamburger = event.target;
-      const nav = hamburger.parentElement;
-      nav.classList.toggle('expanded');
-      if (nav.classList.contains('expanded')) {
-        nav.style.opacity = 1;
-      };
-      
+      if (window.innerWidth <= 1000) {
+        let nav
+        if (event.target.classList.contains('navbar')) {
+          nav = event.target;
+          if (nav.classList.contains('expanded')) {
+            return
+          }
+        } else {
+          event.stopPropagation();
+          const hamburger = event.target;
+          nav = hamburger.parentElement.parentElement
+        }
+          nav.classList.toggle('expanded');
+          const tagme = document.querySelector('.tagme')
+          const p = tagme.querySelector('p')
+        if (nav.classList.contains('expanded')) {
+          p.style.display = 'none'
+          nav.style.opacity = 1;
+        } else {
+          p.style.display = 'block'
+        }
+      }
     },
     scrollTo(event){
       event.preventDefault();
@@ -89,7 +109,7 @@ export default {
               if (window.innerWidth <= 1000) {
                 setTimeout(() => {
                   nav.classList.remove('expanded');
-                  nav.style.opacity = 0.35;
+                  nav.style.opacity = 0.5;
                 }, 500);
               };
 }
@@ -106,8 +126,29 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-#navbar {
+.bi-list::before {
+  position: fixed;
+    top: 0.5rem;
+    left: 0.5rem;
+    font-size: larger;
+}
+.tagme > p{
     position: fixed;
+    top: 0.5rem;
+    left: 3rem;
+    padding-top: 0.51rem;
+    display: flex;
+    align-items: center;
+    height: 65px;
+    width: 65px;
+    border: 2px solid;
+    border-radius: 50%;
+    display: none
+}
+.navbar {
+    position: fixed;
+    display: flex;
+    box-shadow: inset 0 -6px 6px -6px rgba(0, 0, 0, 0.4);
     top: 0;
     width: 100vw;
     height: 50px;
@@ -116,7 +157,7 @@ export default {
     padding-left: 15vw;
     place-content: space-between;
       }
-#navbar > button {
+.navbar > button {
     margin-bottom: 0;
     height:fit-content;
     font-size: medium;
@@ -125,13 +166,13 @@ export default {
     /* width: 200px; */
 }
 
-#navbar > button:hover {
+.navbar > button:hover {
   border-radius: 10px;
   border-width: medium;
   border-color: aliceblue;
 }
 
-  #navbar > button.glow-button:hover {
+  .navbar > button.glow-button:hover {
   border: none;
   }
 .glow-button {
@@ -143,7 +184,7 @@ export default {
     overflow: hidden;
     padding: 0 10px 0 10px;
 }
-#navbar > button > a {
+.navbar > button > a {
     text-decoration: none;
     color: black;
 }
@@ -151,10 +192,17 @@ a.selected {
   color: white !important;
 }
 
-@media (max-width: 1000px) {
 
-#navbar > button:hover {
+
+@media (max-width: 1000px) {
+.navbar {
+  place-content: flex-start;
+}
+.navbar > button:hover {
   border: none;
+}
+.tagme > p{
+  display: block;
 }
 }
 </style>
