@@ -16,6 +16,18 @@
 </template>
 
 <script>
+window.addEventListener('resize', function() {
+  if (window.innerWidth > 1000) {
+    const tagme = document.querySelector('.tagme')
+    const p = tagme.querySelector('p')
+  } else {
+    const navbar = document.querySelector('#navbar')
+    if (!navbar.contains('expanded')) {
+      p.style.display = 'block'
+    }
+  }
+});
+
 export default {
   name:  'NavbarComponent',
   data: function() {
@@ -34,7 +46,6 @@ export default {
     gettingOpaque(event){
       const nav = event.target;
       nav.style.opacity = 1;
-      const navbar = document.querySelector('.navbar');
     },
     toggleNavbar(event){
       if (window.innerWidth <= 1000) {
