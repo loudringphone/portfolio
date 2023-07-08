@@ -36,7 +36,7 @@ export default {
                 url: 'https://videostore.netlify.app/',
                 git: 'https://github.com/loudringphone/videostore',
                 category: 'eCommerce platform',
-                tech: 'ReactJS | Firebase | Stripe | Rowy | Netlify',
+                tech: 'ReactJS | Redux | Firebase | Stripe | Rowy | Netlify',
                 description: ['Stripe client and server integration with Firebase and ReactJS', 'Firebase Cloud Functions and webhooks']
             };
         },

@@ -36,7 +36,7 @@ export default {
                 url: 'https://sparkstudio.netlify.app/',
                 git: 'https://github.com/loudringphone/product-development-agency',
                 category: 'Product development agency',
-                tech: 'ReactJS | Firebase | Rowy | Netlify',
+                tech: 'ReactJS | Redux | Firebase | Rowy | Netlify',
                 description: ["For the General Assembly Australia's Collab-athon over the weekend from 30 Jun to 2 July 2023."]
             };
         },
