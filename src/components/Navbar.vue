@@ -17,12 +17,13 @@
 
 <script>
 window.addEventListener('resize', function() {
+  const tagme = document.querySelector('.tagme')
+  const p = tagme.querySelector('p')
   if (window.innerWidth > 1000) {
-    const tagme = document.querySelector('.tagme')
-    const p = tagme.querySelector('p')
+    p.style.display = 'none'
   } else {
     const navbar = document.querySelector('#navbar')
-    if (!navbar.contains('expanded')) {
+    if (!navbar.classList.contains('expanded')) {
       p.style.display = 'block'
     }
   }
