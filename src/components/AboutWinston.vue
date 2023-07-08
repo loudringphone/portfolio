@@ -265,10 +265,12 @@ export default {
     width: 380px;
     grid-column: 1;
     grid-row: 1;
-    justify-self: right
+    justify-self: right;
   }
-  img {
-    width: 380px !important;
+  figure img {
+    width: 380px;
+    border-radius: 10px;;
+
   }
   
   figcaption {
