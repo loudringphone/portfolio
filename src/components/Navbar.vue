@@ -16,18 +16,18 @@
 </template>
 
 <script>
-window.addEventListener('resize', function() {
-  const tagme = document.querySelector('.tagme')
-  const p = tagme.querySelector('p')
-  if (window.innerWidth > 1000) {
-    p.style.display = 'none'
-  } else {
-    const navbar = document.querySelector('#navbar')
-    if (!navbar.classList.contains('expanded')) {
-      p.style.display = 'block'
-    }
-  }
-});
+// window.addEventListener('resize', function() {
+//   const tagme = document.querySelector('.tagme')
+//   const p = tagme.querySelector('p')
+//   if (window.innerWidth > 1000) {
+//     p.style.display = 'none'
+//   } else {
+//     const navbar = document.querySelector('#navbar')
+//     if (!navbar.classList.contains('expanded')) {
+//       p.style.display = 'block'
+//     }
+//   }
+// });
 
 export default {
   name:  'NavbarComponent',
@@ -67,8 +67,8 @@ export default {
         if (nav.classList.contains('expanded')) {
           p.style.display = 'none'
           nav.style.opacity = 1;
-        } else {
-          p.style.display = 'block'
+        // } else {
+        //   p.style.display = 'block'
         }
       }
     },
@@ -144,6 +144,9 @@ export default {
     left: 0.5rem;
     font-size: larger;
 }
+.tagme {
+  display: none
+}
 .tagme > p{
     position: fixed;
     top: 0.5rem;
@@ -212,6 +215,9 @@ a.selected {
 }
 .navbar > button:hover {
   border: none;
+}
+.tagme {
+  display: flex;
 }
 .tagme > p{
   display: block;
