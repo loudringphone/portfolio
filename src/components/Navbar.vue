@@ -145,10 +145,12 @@ export default {
     font-size: larger;
 }
 .tagme {
-  display: none
+  /* transform: rotate(45deg); */
+  display: none;
 }
 .tagme > p{
     position: fixed;
+    transform: rotate(-45deg);
     top: 0.5rem;
     left: 3rem;
     padding-top: 0.51rem;
