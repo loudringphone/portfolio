@@ -240,6 +240,7 @@ export default {
     padding: 0;
     height: 75px;
     width: 75px;
+    overflow: hidden;
     position: relative;
   }
   button > p {
