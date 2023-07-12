@@ -29,9 +29,9 @@ export default {
                 title: 'Video Store',
                 features: [
                   {image:require('@/assets/videostore/rowy-and-using-derivative-functions.gif'), alt:'Using rowy as the content management system to visualise database'},
-                  {image:require('@/assets/videostore/wishlist-and-cart.gif'), alt:'Dynamic cart and wishlist'},
-                  {image:require('@/assets/videostore/addresses.gif'), alt:'Dynamic address input fields'},
-                  {image:require('@/assets/videostore/stripe.gif'), alt:'Stripe client and server integration'}
+                  {image:require('@/assets/videostore/wishlist-and-cart.gif'), alt:'Dynamic cart and wishlist using Redux and Firebase'},
+                  {image:require('@/assets/videostore/addresses.gif'), alt:'Dynamic address input fields by manipulating state in React'},
+                  {image:require('@/assets/videostore/stripe.gif'), alt:'Stripe client and server integration using Firebase Cloud functions and Stripe webhooks'}
                 ],
                 url: 'https://videostore.netlify.app/',
                 git: 'https://github.com/loudringphone/videostore',
