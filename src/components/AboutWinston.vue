@@ -256,7 +256,7 @@ export default {
     right: 3px;
   }
   .bi-envelope {
-    top: 1px;
+    top: 0px;
   }
   .bi::before, [class^="bi-"]::before, [class*=" bi-"]::before {
     font-size: 48px;
