@@ -13,7 +13,9 @@
     <br><br><br>
     <div class='profile'>
       <p class='para1'>
-        I have recently graduated from General Assembly where I have learned about both front and back end development. I was an accountant previously and I have wanted to change my career for a long time. Finally I have committed myself in a 12 week intensive course at GA and it is the second best decision I have made in my life. (The best one is of course coming to Australia! )
+        As a junior software developer with a background in accountancy, I possess strong reasoning, problem-solving, and skimming skills. I am particularly proud of my skimming skill as software engineers need to read a lot of documentation. This skill also helps me how to identify key words easily and get myself better at Google search. 
+
+My projects reflect the effort I have dedicated to mastering both front-end and back-end development, enabling me to swiftly set up and deploy applications within a 15-minute timeframe. I have taught myself how to implement the Stripe payment system using Stripe webhooks and Firebase cloud functions. This experience has instilled in me the confidence to tackle challenges fearlessly on any cloud platforms that my future employer may use.
       </p>
 
       <figure id='winston'>
