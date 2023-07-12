@@ -145,12 +145,12 @@ export default {
     font-size: larger;
 }
 .tagme {
-  /* transform: rotate(45deg); */
   display: none;
 }
 .tagme > p{
     position: fixed;
     transform: rotate(-45deg);
+    animation: rotateAnimation 3.5s infinite;
     top: 0.5rem;
     left: 3rem;
     padding-top: 0.51rem;
@@ -161,6 +161,14 @@ export default {
     border: 2px solid;
     border-radius: 50%;
     display: none
+}
+@keyframes rotateAnimation {
+    0% {
+        transform: rotate(-45deg);
+    }
+    100% {
+        transform: rotate(315.1deg);
+    }
 }
 .navbar {
     position: fixed;
