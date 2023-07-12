@@ -4,12 +4,12 @@
     <h2>{{ title }}</h2>
     <h3>Hello! I'm a junior software developer based in Sydney!</h3>
     <br>
-    <b-button variant="outline-primary" title="Winston's Resume" @click="redirect($event)"><i class="bi bi-file-person"></i></b-button>
-    <b-button variant="outline-primary" title="mailto:wingfunglau@gmail.com" @click="mailTo()"><i class="bi bi-envelope"></i></b-button>
+    <b-button variant="outline-primary" title="Winston's Resume" @click="redirect($event)"><p>RESUME</p><i class="bi bi-file-person"></i></b-button>
+    <b-button variant="outline-primary" title="mailto:wingfunglau@gmail.com" @click="mailTo()"><p>EMAIL</p><i class="bi bi-envelope"></i></b-button>
     <b-button variant="outline-primary" 
-    title="Winston's Linkedin" @click="redirect($event)"><i class="bi bi-linkedin"></i></b-button>
-    <b-button variant="outline-primary" title="Winston's Github" @click="redirect($event)"><i class="bi bi-github"></i></b-button>
-    <b-button variant="outline-primary" title="copy to clipboard:0422882062" @click="copyMobile()"><i class="bi bi-phone"></i></b-button>
+    title="Winston's Linkedin" @click="redirect($event)"><p>LINKEDIN</p><i class="bi bi-linkedin"></i></b-button>
+    <b-button variant="outline-primary" title="Winston's Github" @click="redirect($event)"><p>GITHUB</p><i class="bi bi-github"></i></b-button>
+    <b-button variant="outline-primary" title="copy to clipboard:0422882062" @click="copyMobile()"><p>MOBILE</p><i class="bi bi-phone"></i></b-button>
     <br><br><br>
     <div class='profile'>
       <p class='para1'>
@@ -234,6 +234,33 @@ export default {
   * {
     overflow-x: hidden;
   }
+  button {
+    display: inline-flex;
+    align-items: center;
+    padding: 0;
+    height: 75px;
+    width: 75px;
+    position: relative;
+  }
+  button > p {
+    position: absolute;
+    left: -20px;
+    text-align: right;
+    font-size: small;
+    transform: rotate(-90deg);
+    width: 60px;
+  }
+  .bi {
+    position: absolute;
+    top: 5.5px;
+    right: 3px;
+  }
+  .bi-envelope {
+    top: 1px;
+  }
+  .bi::before, [class^="bi-"]::before, [class*=" bi-"]::before {
+    font-size: 48px;
+  }
   .profile {
     justify-content: center;
     width: 80%;
@@ -361,7 +388,7 @@ export default {
     }
 
     button.btn.btn-outline-primary {
-    margin: 0 5px 10px 5px;
+    margin: 0 3px 10px 3px;
   }
 
     #notification {
