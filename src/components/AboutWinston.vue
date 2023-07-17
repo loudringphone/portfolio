@@ -296,6 +296,7 @@ export default {
     grid-column: 1;
     grid-row: 1;
     justify-self: right;
+    align-self: center;
   }
   figure img {
     width: 380px;
