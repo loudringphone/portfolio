@@ -36,7 +36,7 @@ My projects reflect the effort I have dedicated to mastering both front-end and 
 
 </template>
 
-<script>
+<script defer>
 
 
 
@@ -242,7 +242,6 @@ export default {
     padding: 0;
     height: 75px;
     width: 75px;
-    overflow: hidden;
     position: relative;
   }
   button > p {
@@ -254,6 +253,7 @@ export default {
     width: 60px;
   }
   .bi {
+    overflow: hidden;
     position: absolute;
     top: 5.5px;
     right: 3px;
