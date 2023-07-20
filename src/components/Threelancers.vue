@@ -3,6 +3,8 @@
             <h2>{{ title }}</h2>
         <p>{{ category }}</p>
         <a :href='url' target="_blank">{{ url }}</a>
+        <a :href='git1' target="_blank">{{ git1 }}</a>
+        <a :href='git2' target="_blank">{{ git2 }}</a>
         <p>{{ tech }}</p>
         <ul>
           <li v-for="d in description" :key="d.id">{{ d }}</li>
@@ -32,6 +34,8 @@ export default {
                   {image:require('@/assets/threelancers/jwt-sessions.gif'), alt:'JWT-based authentication implemented in Ruby on Rails'}
                 ],
                 url: '',
+                git1: 'https://github.com/loudringphone/3lancers_server',
+                git2: 'https://github.com/loudringphone/3lancers_client',
                 category: 'Mobile marketplace',
                 tech: 'ReactJS  | Ruby on Rails | postgreSQL | Netlify | Heroku',
                 description: ['Ruby on Rails as back-end', 'React as front-end', 'JWT token sign-in', 'Google Maps Geocoding API']
