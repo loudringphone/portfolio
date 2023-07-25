@@ -2,8 +2,8 @@
   <div id="threelancers" @mouseover="mouseOver()" @touchstart="touchStart()">
             <h2>{{ title }}</h2>
         <p>{{ category }}</p>
-        <a :href='url' target="_blank">{{ url }}</a>
         <a :href='git1' target="_blank">{{ git1 }}</a>
+        <br>
         <a :href='git2' target="_blank">{{ git2 }}</a>
         <p>{{ tech }}</p>
         <ul>
