@@ -2,6 +2,7 @@
   <div>
     <Navbar />
     <AboutWinston />
+    <Winstonsblog />
     <Videostore />
     <Sparkstudio />
     <Uttt />
@@ -16,6 +17,7 @@
 // @ is an alias to /src
 import Navbar from '@/components/Navbar.vue'
 import AboutWinston from '@/components/AboutWinston.vue'
+import Winstonsblog from '@/components/Winstonsblog.vue'
 import Videostore from '@/components/Videostore.vue'
 import Sparkstudio from '@/components/Sparkstudio.vue'
 import Uttt from '@/components/Uttt.vue'
@@ -23,6 +25,7 @@ import Sancbook from '@/components/Sancbook.vue'
 import Threelancers from '@/components/Threelancers.vue'
 import Tutonet from '@/components/Tutonet.vue'
 import BackToTop from '@/components/BackToTop.vue'
+import WinstonblogVue from './components/Winstonsblog.vue'
 
 
 
@@ -33,6 +36,7 @@ export default {
   components: {
     Navbar,
     AboutWinston,
+    Winstonsblog,
     Videostore,
     Sparkstudio,
     Uttt,
@@ -221,6 +225,13 @@ p.esc {
     min-height: 100vh;
     padding: 50px 0 150px 0;
     background: linear-gradient(to bottom, lightcyan 92.5%,
+     rgb(255, 221, 169));
+}
+#winstonsblog {
+    background-color: rgb(255, 221, 169);
+    min-height: 100vh;
+    padding: 50px 0 150px 0;
+    background: linear-gradient(to bottom, rgb(255, 221, 169) 92.5%,
      #f3ffd9);
 }
 #videostore {
