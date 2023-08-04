@@ -33,8 +33,8 @@ export default {
                   {image:require('@/assets/winstonblog/image-upload-and-label-selection.gif'), alt:'Image upload quota for each post'},
                   {image:require('@/assets/winstonblog/post-categories.gif'), alt:'Posts are fetched based on their categories or labels'}
                 ],
-                url: 'https://winstonblog.netlify.app/',
-                // git: 'https://github.com/loudringphone/product-development-agency',
+                url: 'https://winstonsblog.netlify.app/',
+                git: 'https://github.com/loudringphone/blog-editor',
                 category: 'Blog editor',
                 tech: 'ReactJS | Quill | Firebase | Rowy | Netlify',
                 description: ["Blog editor which can be used as a headless CMS to maintain the blog posts on company webpages."]
