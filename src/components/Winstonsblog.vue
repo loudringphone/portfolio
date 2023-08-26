@@ -47,7 +47,7 @@ export default {
       for (let button of buttons) {
         button.classList.remove("btn", "btn-block", "btn-lg", "glow-button", "btn-warning")
         button.firstChild.classList.remove("selected")
-        if (button.firstChild.textContent === 'Spark Studio') {
+        if (button.firstChild.textContent === "Winston's Blog") {
           button.classList.add("btn", "btn-block", "btn-lg", "glow-button", "btn-warning")
           button.firstChild.classList.add("selected")
         }
@@ -59,7 +59,7 @@ export default {
       for (let button of buttons) {
         button.classList.remove("btn", "btn-block", "btn-lg", "glow-button", "btn-warning")
         button.firstChild.classList.remove("selected")
-        if (button.firstChild.textContent === 'Spark Studio') {
+        if (button.firstChild.textContent === "Winston's Blog") {
           button.classList.add("btn", "btn-block", "btn-lg", "glow-button", "btn-warning")
           button.firstChild.classList.add("selected")
         }

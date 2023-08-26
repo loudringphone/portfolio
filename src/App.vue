@@ -325,7 +325,7 @@ ul {
         /* min-height: 22220px !important; */
         padding-right: 0;
         padding-left: 0;
-        height: 430px !important;
+        height: 500px !important;
         border-bottom-right-radius: 10px;
         transition: height 1s, width 1s;
         cursor: pointer;
@@ -347,7 +347,7 @@ ul {
         flex-direction: column;
         align-items: flex-start;
         justify-content: left;
-        height: 430px !important;
+        height: 500px !important;
         width: 200px !important;
         padding-bottom: 20px;
         font-size: small;

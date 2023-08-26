@@ -34,6 +34,7 @@ export default {
   data: function() {
             return {
                 navs: [
+                    { text: "Winston's Blog", href: 'winstonsblog'},
                     { text: 'Video Store', href: 'videostore'},
                     { text: 'Spark Studio', href: 'sparkstudio'},
                     { text: 'Ultimate Tic-tac-toe', href: 'uttt'},
